@@ -1,0 +1,31 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;overflow:hidden;background:#FBF8F2;font-family:Inter,sans-serif;color:#17140F}
+.hl{font-family:'League Gothic',Oswald,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.01em;color:#17140F}
+.blk{display:inline-block;background:#C8541A;color:#FBF8F2;padding:0 .14em}
+.blk-dark{display:inline-block;background:#17140F;color:#FBF8F2;padding:0 .14em}
+.char{position:absolute;transform-origin:50% 100%;margin-top:-80px}
+.char img{display:block;width:100%;height:auto}
+.floor{position:absolute;margin-top:-80px;height:4px;background:#17140F;border-radius:2px}
+.face{position:absolute;border-radius:50%;background:#C8541A;border:7px solid #17140F;overflow:hidden}
+.face img{position:absolute;left:50%;bottom:-2%;width:86%;transform:translateX(-50%)}
+.card{position:absolute;background:#fff;border:6px solid #17140F;border-radius:28px;box-shadow:12px 12px 0 #17140F}
+</style>
+  <div id="root" data-composition-id="s3" data-width="1920" data-height="1080">
+
+    <div id="calm" class="face" style="width:470px;height:470px;left:725px;top:170px;background:#FBF8F2"><img src="assets/char/face-calm.png" alt=""></div>
+    <div id="t3" class="hl" style="position:absolute;left:0;right:0;top:690px;text-align:center;font-size:150px">YOU WENT <span class="blk-dark">QUIET.</span></div>
+    
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const S = (s) => document.querySelector('[data-composition-id="s3"] ' + s);
+    const SA = (s) => document.querySelectorAll('[data-composition-id="s3"] ' + s);
+
+tl.fromTo(S('#calm'), {opacity:0, scale:.85}, {opacity:1, scale:1, duration:.7, ease:'power2.out'}, .1);
+tl.fromTo(S('#t3'), {opacity:0}, {opacity:1, duration:.5}, .7);
+tl.fromTo(S('#calm'), {scale:1}, {scale:1.04, duration:1.4, ease:'sine.inOut'}, .8);
+
+    window.__timelines["s3"] = tl;
+  </script>
+</template>

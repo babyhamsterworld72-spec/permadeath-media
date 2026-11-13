@@ -1,0 +1,38 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;overflow:hidden;background:#FBF8F2;font-family:Inter,sans-serif;color:#17140F}
+.hl{font-family:'League Gothic',Oswald,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.01em;color:#17140F}
+.blk{display:inline-block;background:#C8541A;color:#FBF8F2;padding:0 .14em}
+.blk-dark{display:inline-block;background:#17140F;color:#FBF8F2;padding:0 .14em}
+.char{position:absolute;transform-origin:50% 100%;margin-top:-80px}
+.char img{display:block;width:100%;height:auto}
+.floor{position:absolute;margin-top:-80px;height:4px;background:#17140F;border-radius:2px}
+.face{position:absolute;border-radius:50%;background:#C8541A;border:7px solid #17140F;overflow:hidden}
+.face img{position:absolute;left:50%;bottom:-2%;width:86%;transform:translateX(-50%)}
+.card{position:absolute;background:#fff;border:6px solid #17140F;border-radius:28px;box-shadow:12px 12px 0 #17140F}
+#arms img{transform-origin:50% 100%}</style>
+  <div id="root" data-composition-id="s1" data-width="1920" data-height="1080">
+
+    <div id="t1" class="hl" style="position:absolute;left:150px;top:260px;font-size:220px">STOP<br><span id="chs" style="position:relative;display:inline-block">CHASING<span id="strike" style="position:absolute;left:-12px;right:-12px;top:48%;height:22px;background:#C8541A;transform-origin:0 50%"></span></span></div>
+    <div id="arms" class="char" style="left:1240px;top:180px;width:330px"><img src="assets/char/arms-crossed.png" alt=""></div>
+    <div class="floor" style="left:1120px;top:960px;width:560px"></div>
+    <svg id="spark" width="140" height="140" viewBox="0 0 140 140" style="position:absolute;left:1580px;top:170px">
+      <path d="M70 5 L82 58 L135 70 L82 82 L70 135 L58 82 L5 70 L58 58 Z" fill="#C8541A" stroke="#17140F" stroke-width="6" stroke-linejoin="round"/></svg>
+    
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const S = (s) => document.querySelector('[data-composition-id="s1"] ' + s);
+    const SA = (s) => document.querySelectorAll('[data-composition-id="s1"] ' + s);
+
+tl.fromTo(S('#t1'), {opacity:1, x:-40}, {opacity:1, x:0, duration:.35, ease:'power3.out'}, .15);
+tl.fromTo(S('#strike'), {scaleX:0}, {scaleX:1, duration:.35, ease:'power2.inOut'}, 1.2);
+tl.fromTo(S('#arms'), {opacity:0, y:30}, {opacity:1, y:0, duration:.4, ease:'power3.out'}, .4);
+tl.fromTo(S('#spark'), {opacity:0, scale:0, rotation:-60}, {opacity:1, scale:1, rotation:0, duration:.4, ease:'back.out(2.4)'}, 2.6);
+tl.to(S('#arms img'), {scaleY:1.012, duration:1.2, ease:'sine.inOut'}, 0.80);
+tl.to(S('#arms img'), {scaleY:1, duration:1.2, ease:'sine.inOut'}, 2.00);
+tl.to(S('#arms img'), {scaleY:1.012, duration:1.2, ease:'sine.inOut'}, 3.20);
+
+    window.__timelines["s1"] = tl;
+  </script>
+</template>

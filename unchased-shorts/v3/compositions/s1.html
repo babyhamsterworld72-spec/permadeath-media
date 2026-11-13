@@ -1,0 +1,48 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;overflow:hidden;background:#FBF8F2;font-family:Inter,sans-serif;color:#17140F}
+.hl{font-family:'League Gothic',Oswald,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.01em;color:#17140F}
+.blk{display:inline-block;background:#C8541A;color:#FBF8F2;padding:0 .14em}
+.blk-dark{display:inline-block;background:#17140F;color:#FBF8F2;padding:0 .14em}
+.char{position:absolute;transform-origin:50% 100%;margin-top:-80px}
+.char img{display:block;width:100%;height:auto}
+.floor{position:absolute;margin-top:-80px;height:4px;background:#17140F;border-radius:2px}
+.face{position:absolute;border-radius:50%;background:#C8541A;border:7px solid #17140F;overflow:hidden}
+.face img{position:absolute;left:50%;bottom:-2%;width:86%;transform:translateX(-50%)}
+.card{position:absolute;background:#fff;border:6px solid #17140F;border-radius:28px;box-shadow:12px 12px 0 #17140F}
+</style>
+  <div id="root" data-composition-id="s1" data-width="1920" data-height="1080">
+
+    <svg id="scale" data-layout-allow-overflow width="1180" height="640" viewBox="-40 0 1180 640" style="position:absolute;left:80px;top:240px">
+      <rect x="530" y="140" width="40" height="440" fill="#17140F"/>
+      <rect x="400" y="570" width="300" height="34" rx="10" fill="#17140F"/>
+      <g id="beam"><rect x="90" y="120" width="920" height="30" rx="15" fill="#17140F"/>
+        <g id="panL"><line x1="130" y1="135" x2="130" y2="300" stroke="#17140F" stroke-width="6"/>
+          <path d="M20 300 H240 Q130 380 20 300 Z" fill="#2F7D4F" stroke="#17140F" stroke-width="7"/>
+          <text x="130" y="430" text-anchor="middle" font-family="League Gothic" font-size="54">HER VALUE OF YOU</text></g>
+        <g id="panR"><line x1="970" y1="135" x2="970" y2="300" stroke="#17140F" stroke-width="6"/>
+          <path d="M860 300 H1080 Q970 380 860 300 Z" fill="#C8541A" stroke="#17140F" stroke-width="7"/>
+          <text x="970" y="430" text-anchor="middle" font-family="League Gothic" font-size="54">YOUR VALUE OF YOU</text></g>
+      </g>
+      <circle cx="550" cy="135" r="26" fill="#C8541A" stroke="#17140F" stroke-width="7"/>
+    </svg>
+    <div id="sad" class="face" style="width:360px;height:360px;left:1380px;top:250px"><img src="assets/char/face-sad.png" alt=""></div>
+    <div id="beg" class="hl" style="position:absolute;left:1300px;top:660px;width:520px;text-align:center;font-size:110px"><span class="blk-dark">BEGGING</span></div>
+    
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const S = (s) => document.querySelector('[data-composition-id="s1"] ' + s);
+    const SA = (s) => document.querySelectorAll('[data-composition-id="s1"] ' + s);
+
+tl.fromTo(S('#scale'), {opacity:1, y:40}, {opacity:1, y:0, duration:.4, ease:'power3.out'}, 0);
+tl.fromTo(S('#sad'), {opacity:0, scale:.6}, {opacity:1, scale:1, duration:.35, ease:'back.out(2)'}, .4);
+tl.fromTo(S('#beg'), {opacity:0, y:20}, {opacity:1, y:0, duration:.25}, .8);
+tl.fromTo(S('#beam'), {rotation:0}, {rotation:-12, svgOrigin:'550 135', duration:1.6, ease:'power2.inOut'}, 2.2);
+tl.fromTo(S('#panL'), {rotation:0}, {rotation:12, svgOrigin:'130 135', duration:1.6, ease:'power2.inOut'}, 2.2);
+tl.fromTo(S('#panR'), {rotation:0}, {rotation:12, svgOrigin:'970 135', duration:1.6, ease:'power2.inOut'}, 2.2);
+tl.fromTo(S('#sad'), {y:0}, {y:14, duration:1.2, ease:'sine.inOut'}, 3.2);
+
+    window.__timelines["s1"] = tl;
+  </script>
+</template>

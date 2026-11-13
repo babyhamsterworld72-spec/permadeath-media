@@ -1,0 +1,36 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;overflow:hidden;background:#FBF8F2;font-family:Inter,sans-serif;color:#17140F}
+.hl{font-family:'League Gothic',Oswald,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.01em;color:#17140F}
+.blk{display:inline-block;background:#C8541A;color:#FBF8F2;padding:0 .14em}
+.blk-dark{display:inline-block;background:#17140F;color:#FBF8F2;padding:0 .14em}
+.char{position:absolute;transform-origin:50% 100%;margin-top:-80px}
+.char img{display:block;width:100%;height:auto}
+.floor{position:absolute;margin-top:-80px;height:4px;background:#17140F;border-radius:2px}
+.face{position:absolute;border-radius:50%;background:#C8541A;border:7px solid #17140F;overflow:hidden}
+.face img{position:absolute;left:50%;bottom:-2%;width:86%;transform:translateX(-50%)}
+.card{position:absolute;background:#fff;border:6px solid #17140F;border-radius:28px;box-shadow:12px 12px 0 #17140F}
+</style>
+  <div id="root" data-composition-id="s2" data-width="1920" data-height="1080">
+
+    <svg id="eye" width="760" height="420" viewBox="0 0 760 420" style="position:absolute;left:580px;top:230px">
+      <path d="M20 210 Q380 -60 740 210 Q380 480 20 210 Z" fill="#fff" stroke="#17140F" stroke-width="14"/>
+      <circle id="iris" cx="380" cy="210" r="110" fill="#C8541A" stroke="#17140F" stroke-width="12"/>
+      <circle id="pupil" cx="380" cy="210" r="48" fill="#17140F"/>
+      <rect id="lid" x="0" y="0" width="760" height="420" fill="#FBF8F2"/>
+    </svg>
+    <div id="t2" class="hl" style="position:absolute;left:0;right:0;top:110px;text-align:center;font-size:120px">SHE <span class="blk">NOTICES.</span></div>
+    
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const S = (s) => document.querySelector('[data-composition-id="s2"] ' + s);
+    const SA = (s) => document.querySelectorAll('[data-composition-id="s2"] ' + s);
+
+tl.fromTo(S('#lid'), {attr:{height:420}}, {attr:{height:0}, duration:.35, ease:'power3.out'}, .05);
+tl.fromTo(S('#t2'), {opacity:0, y:20}, {opacity:1, y:0, duration:.25, ease:'power3.out'}, .15);
+tl.fromTo(SA('#iris, #pupil'), {x:-60}, {x:40, duration:.5, ease:'power2.inOut'}, .55);
+
+    window.__timelines["s2"] = tl;
+  </script>
+</template>

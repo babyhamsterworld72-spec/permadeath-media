@@ -1,0 +1,24 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;overflow:hidden;background:#FBF8F2;font-family:Inter,sans-serif;color:#17140F}
+.hl{font-family:'League Gothic',Oswald,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.01em;color:#17140F}
+.blk{display:inline-block;background:#C8541A;color:#FBF8F2;padding:0 .14em}
+.blk-dark{display:inline-block;background:#17140F;color:#FBF8F2;padding:0 .14em}
+.char{position:absolute;transform-origin:50% 100%;margin-top:-80px}
+.char img{display:block;width:100%;height:auto}
+.floor{position:absolute;margin-top:-80px;height:4px;background:#17140F;border-radius:2px}
+.face{position:absolute;border-radius:50%;background:#C8541A;border:7px solid #17140F;overflow:hidden}
+.face img{position:absolute;left:50%;bottom:-2%;width:86%;transform:translateX(-50%)}
+.card{position:absolute;background:#fff;border:6px solid #17140F;border-radius:28px;box-shadow:12px 12px 0 #17140F}
+#root{background:transparent}</style>
+  <div id="root" data-composition-id="bug" data-width="1920" data-height="1080">
+    <div id="bug" style="position:absolute;left:96px;top:70px;font-family:'League Gothic';font-size:54px;letter-spacing:.06em;color:#17140F"><span style="color:#C8541A">U</span>NCHASED</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const S = (s) => document.querySelector('[data-composition-id="bug"] ' + s);
+    const SA = (s) => document.querySelectorAll('[data-composition-id="bug"] ' + s);
+tl.fromTo(S('#bug'), {opacity:0, x:-20}, {opacity:1, x:0, duration:.4, ease:'power2.out'}, 0.1);
+    window.__timelines["bug"] = tl;
+  </script>
+</template>

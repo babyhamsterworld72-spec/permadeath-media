@@ -1,0 +1,39 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;overflow:hidden;background:#FBF8F2;font-family:Inter,sans-serif;color:#17140F}
+.hl{font-family:'League Gothic',Oswald,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.01em;color:#17140F}
+.blk{display:inline-block;background:#C8541A;color:#FBF8F2;padding:0 .14em}
+.blk-dark{display:inline-block;background:#17140F;color:#FBF8F2;padding:0 .14em}
+.char{position:absolute;transform-origin:50% 100%;margin-top:-80px}
+.char img{display:block;width:100%;height:auto}
+.floor{position:absolute;margin-top:-80px;height:4px;background:#17140F;border-radius:2px}
+.face{position:absolute;border-radius:50%;background:#C8541A;border:7px solid #17140F;overflow:hidden}
+.face img{position:absolute;left:50%;bottom:-2%;width:86%;transform:translateX(-50%)}
+.card{position:absolute;background:#fff;border:6px solid #17140F;border-radius:28px;box-shadow:12px 12px 0 #17140F}
+</style>
+  <div id="root" data-composition-id="s4" data-width="1920" data-height="1080">
+
+    <div id="q" class="hl" style="position:absolute;left:0;right:0;top:170px;text-align:center;font-size:190px;line-height:1">
+      <span class="qw">LOVE</span> <span class="qw">YOU</span> <span class="qw">HAVE</span> <span class="qw">TO</span> <span class="qw">BEG</span> <span class="qw">FOR</span><br>
+      <span class="qw">WAS</span> <span class="qw blk">NEVER</span> <span class="qw">LOVE.</span></div>
+    <div id="mq" style="position:absolute;left:0;right:0;top:110px;text-align:center;font-family:'League Gothic';font-size:200px;color:#C8541A;line-height:1">“</div>
+    
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const S = (s) => document.querySelector('[data-composition-id="s4"] ' + s);
+    const SA = (s) => document.querySelectorAll('[data-composition-id="s4"] ' + s);
+tl.fromTo(SA('.qw')[0], {opacity:0, y:30}, {opacity:1, y:0, duration:.18, ease:'power3.out'}, 0.17);
+tl.fromTo(SA('.qw')[1], {opacity:0, y:30}, {opacity:1, y:0, duration:.18, ease:'power3.out'}, 0.49);
+tl.fromTo(SA('.qw')[2], {opacity:0, y:30}, {opacity:1, y:0, duration:.18, ease:'power3.out'}, 0.76);
+tl.fromTo(SA('.qw')[3], {opacity:0, y:30}, {opacity:1, y:0, duration:.18, ease:'power3.out'}, 1.08);
+tl.fromTo(SA('.qw')[4], {opacity:0, y:30}, {opacity:1, y:0, duration:.18, ease:'power3.out'}, 1.28);
+tl.fromTo(SA('.qw')[5], {opacity:0, y:30}, {opacity:1, y:0, duration:.18, ease:'power3.out'}, 1.55);
+tl.fromTo(SA('.qw')[6], {opacity:0, y:30}, {opacity:1, y:0, duration:.18, ease:'power3.out'}, 1.81);
+tl.fromTo(SA('.qw')[7], {opacity:0, y:30}, {opacity:1, y:0, duration:.18, ease:'power3.out'}, 2.08);
+tl.fromTo(SA('.qw')[8], {opacity:0, y:30}, {opacity:1, y:0, duration:.18, ease:'power3.out'}, 2.46);
+tl.fromTo(S('#mq'), {opacity:0}, {opacity:1, duration:.3}, 0);
+tl.fromTo(SA('.qw')[7], {scale:1}, {scale:1.12, duration:.25, ease:'back.out(3)'}, 2.11);
+    window.__timelines["s4"] = tl;
+  </script>
+</template>

@@ -1,0 +1,62 @@
+<template>
+  <style>
+.cap{position:absolute;left:50%;bottom:58px;font-family:Inter,sans-serif;transform:translateX(-50%);width:1500px;text-align:center;font-weight:900;font-size:50px;line-height:1.18;opacity:0;
+  background:rgba(251,248,242,.92);padding:14px 34px;border-radius:18px}
+.w{color:rgba(23,20,15,.52)}
+#root{background:transparent}
+</style>
+  <div id="root" data-composition-id="captions" data-width="1920" data-height="1080" data-layout-allow-caption-zone>
+    <div class="cap" id="captions-l0"><span class="w" id="captions-l0w0">They</span> <span class="w" id="captions-l0w1">hurt</span> <span class="w" id="captions-l0w2">you,</span> <span class="w" id="captions-l0w3">and</span> <span class="w" id="captions-l0w4">they</span> <span class="w" id="captions-l0w5">expected</span> <span class="w" id="captions-l0w6">a</span> <span class="w" id="captions-l0w7">scene.</span> </div>
+    <div class="cap" id="captions-l1"><span class="w" id="captions-l1w0">Tears.</span> <span class="w" id="captions-l1w1">Anger.</span> <span class="w" id="captions-l1w2">A</span> <span class="w" id="captions-l1w3">long</span> <span class="w" id="captions-l1w4">message.</span> </div>
+    <div class="cap" id="captions-l2"><span class="w" id="captions-l2w0">Instead,</span> <span class="w" id="captions-l2w1">you</span> <span class="w" id="captions-l2w2">went</span> <span class="w" id="captions-l2w3">quiet.</span> </div>
+    <div class="cap" id="captions-l3"><span class="w" id="captions-l3w0">You</span> <span class="w" id="captions-l3w1">stayed</span> <span class="w" id="captions-l3w2">kind.</span> <span class="w" id="captions-l3w3">You</span> <span class="w" id="captions-l3w4">got</span> <span class="w" id="captions-l3w5">better.</span> </div>
+    <div class="cap" id="captions-l4"><span class="w" id="captions-l4w0">And</span> <span class="w" id="captions-l4w1">that</span> <span class="w" id="captions-l4w2">silence</span> <span class="w" id="captions-l4w3">said</span> <span class="w" id="captions-l4w4">more</span> <span class="w" id="captions-l4w5">than</span> <span class="w" id="captions-l4w6">any</span> <span class="w" id="captions-l4w7">words</span> <span class="w" id="captions-l4w8">ever</span> <span class="w" id="captions-l4w9">could.</span> </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+tl.fromTo('#captions-l0', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 0.24);
+tl.to('#captions-l0', {opacity:0, duration:.12}, 3.13);
+tl.fromTo('#captions-l0w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 0.30);
+tl.fromTo('#captions-l0w1', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 0.60);
+tl.fromTo('#captions-l0w2', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 0.89);
+tl.fromTo('#captions-l0w3', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 1.14);
+tl.fromTo('#captions-l0w4', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 1.38);
+tl.fromTo('#captions-l0w5', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 1.68);
+tl.fromTo('#captions-l0w6', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 2.19);
+tl.fromTo('#captions-l0w7', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 2.38);
+tl.fromTo('#captions-l1', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 3.12);
+tl.to('#captions-l1', {opacity:0, duration:.12}, 5.78);
+tl.fromTo('#captions-l1w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 3.18);
+tl.fromTo('#captions-l1w1', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 3.65);
+tl.fromTo('#captions-l1w2', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 4.12);
+tl.fromTo('#captions-l1w3', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 4.37);
+tl.fromTo('#captions-l1w4', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 4.77);
+tl.fromTo('#captions-l2', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 5.77);
+tl.to('#captions-l2', {opacity:0, duration:.12}, 7.98);
+tl.fromTo('#captions-l2w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 5.83);
+tl.fromTo('#captions-l2w1', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 6.42);
+tl.fromTo('#captions-l2w2', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 6.74);
+tl.fromTo('#captions-l2w3', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 7.12);
+tl.fromTo('#captions-l3', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 7.97);
+tl.to('#captions-l3', {opacity:0, duration:.12}, 10.78);
+tl.fromTo('#captions-l3w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 8.03);
+tl.fromTo('#captions-l3w1', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 8.34);
+tl.fromTo('#captions-l3w2', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 8.86);
+tl.fromTo('#captions-l3w3', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 9.24);
+tl.fromTo('#captions-l3w4', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 9.55);
+tl.fromTo('#captions-l3w5', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 9.86);
+tl.fromTo('#captions-l4', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 10.77);
+tl.to('#captions-l4', {opacity:0, duration:.12}, 14.25);
+tl.fromTo('#captions-l4w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 10.83);
+tl.fromTo('#captions-l4w1', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 11.07);
+tl.fromTo('#captions-l4w2', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 11.36);
+tl.fromTo('#captions-l4w3', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 11.81);
+tl.fromTo('#captions-l4w4', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 12.10);
+tl.fromTo('#captions-l4w5', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 12.39);
+tl.fromTo('#captions-l4w6', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 12.68);
+tl.fromTo('#captions-l4w7', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 12.92);
+tl.fromTo('#captions-l4w8', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 13.26);
+tl.fromTo('#captions-l4w9', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 13.56);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

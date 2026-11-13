@@ -1,0 +1,58 @@
+<template>
+  <style>
+.cap{position:absolute;left:50%;bottom:58px;font-family:Inter,sans-serif;transform:translateX(-50%);width:1500px;text-align:center;font-weight:900;font-size:50px;line-height:1.18;opacity:0;
+  background:rgba(251,248,242,.92);padding:14px 34px;border-radius:18px}
+.w{color:rgba(23,20,15,.52)}
+#root{background:transparent}
+</style>
+  <div id="root" data-composition-id="captions" data-width="1920" data-height="1080" data-layout-allow-caption-zone>
+    <div class="cap" id="captions-l0"><span class="w" id="captions-l0w0">The</span> <span class="w" id="captions-l0w1">moment</span> <span class="w" id="captions-l0w2">you</span> <span class="w" id="captions-l0w3">stop</span> <span class="w" id="captions-l0w4">chasing,</span> <span class="w" id="captions-l0w5">something</span> <span class="w" id="captions-l0w6">strange</span> <span class="w" id="captions-l0w7">happens.</span> </div>
+    <div class="cap" id="captions-l1"><span class="w" id="captions-l1w0">She</span> <span class="w" id="captions-l1w1">notices.</span> </div>
+    <div class="cap" id="captions-l2"><span class="w" id="captions-l2w0">Psychologists</span> <span class="w" id="captions-l2w1">call</span> <span class="w" id="captions-l2w2">it</span> <span class="w" id="captions-l2w3">reactance.</span> </div>
+    <div class="cap" id="captions-l3"><span class="w" id="captions-l3w0">Your</span> <span class="w" id="captions-l3w1">attention</span> <span class="w" id="captions-l3w2">was</span> <span class="w" id="captions-l3w3">always</span> <span class="w" id="captions-l3w4">there,</span> <span class="w" id="captions-l3w5">so</span> <span class="w" id="captions-l3w6">it</span> <span class="w" id="captions-l3w7">was</span> <span class="w" id="captions-l3w8">invisible.</span> </div>
+    <div class="cap" id="captions-l4"><span class="w" id="captions-l4w0">Now</span> <span class="w" id="captions-l4w1">it's</span> <span class="w" id="captions-l4w2">gone.</span> <span class="w" id="captions-l4w3">So</span> <span class="w" id="captions-l4w4">it's</span> <span class="w" id="captions-l4w5">everything.</span> </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+tl.fromTo('#captions-l0', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 0.14);
+tl.to('#captions-l0', {opacity:0, duration:.12}, 3.94);
+tl.fromTo('#captions-l0w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 0.20);
+tl.fromTo('#captions-l0w1', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 0.47);
+tl.fromTo('#captions-l0w2', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 0.93);
+tl.fromTo('#captions-l0w3', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 1.21);
+tl.fromTo('#captions-l0w4', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 1.54);
+tl.fromTo('#captions-l0w5', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 2.06);
+tl.fromTo('#captions-l0w6', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 2.70);
+tl.fromTo('#captions-l0w7', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 3.22);
+tl.fromTo('#captions-l1', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 3.93);
+tl.to('#captions-l1', {opacity:0, duration:.12}, 5.36);
+tl.fromTo('#captions-l1w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 3.99);
+tl.fromTo('#captions-l1w1', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 4.40);
+tl.fromTo('#captions-l2', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 5.35);
+tl.to('#captions-l2', {opacity:0, duration:.12}, 7.90);
+tl.fromTo('#captions-l2w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 5.41);
+tl.fromTo('#captions-l2w1', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 6.39);
+tl.fromTo('#captions-l2w2', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 6.76);
+tl.fromTo('#captions-l2w3', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 6.99);
+tl.fromTo('#captions-l3', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 7.89);
+tl.to('#captions-l3', {opacity:0, duration:.12}, 11.60);
+tl.fromTo('#captions-l3w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 7.95);
+tl.fromTo('#captions-l3w1', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 8.29);
+tl.fromTo('#captions-l3w2', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 8.93);
+tl.fromTo('#captions-l3w3', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 9.20);
+tl.fromTo('#captions-l3w4', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 9.66);
+tl.fromTo('#captions-l3w5', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 10.06);
+tl.fromTo('#captions-l3w6', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 10.27);
+tl.fromTo('#captions-l3w7', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 10.48);
+tl.fromTo('#captions-l3w8', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 10.76);
+tl.fromTo('#captions-l4', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 11.59);
+tl.to('#captions-l4', {opacity:0, duration:.12}, 14.29);
+tl.fromTo('#captions-l4w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 11.65);
+tl.fromTo('#captions-l4w1', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 11.95);
+tl.fromTo('#captions-l4w2', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 12.26);
+tl.fromTo('#captions-l4w3', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 12.63);
+tl.fromTo('#captions-l4w4', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 12.86);
+tl.fromTo('#captions-l4w5', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 13.17);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

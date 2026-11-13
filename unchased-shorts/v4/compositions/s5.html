@@ -1,0 +1,38 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;overflow:hidden;background:#FBF8F2;font-family:Inter,sans-serif;color:#17140F}
+.hl{font-family:'League Gothic',Oswald,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.01em;color:#17140F}
+.blk{display:inline-block;background:#C8541A;color:#FBF8F2;padding:0 .14em}
+.blk-dark{display:inline-block;background:#17140F;color:#FBF8F2;padding:0 .14em}
+.char{position:absolute;transform-origin:50% 100%;margin-top:-80px}
+.char img{display:block;width:100%;height:auto}
+.floor{position:absolute;margin-top:-80px;height:4px;background:#17140F;border-radius:2px}
+.face{position:absolute;border-radius:50%;background:#C8541A;border:7px solid #17140F;overflow:hidden}
+.face img{position:absolute;left:50%;bottom:-2%;width:86%;transform:translateX(-50%)}
+.card{position:absolute;background:#fff;border:6px solid #17140F;border-radius:28px;box-shadow:12px 12px 0 #17140F}
+.wb{position:absolute;background:#fff;border:6px solid #17140F;border-radius:26px;padding:12px 28px;font-weight:900;font-size:44px;color:#17140F}</style>
+  <div id="root" data-composition-id="s5" data-width="1920" data-height="1080">
+
+    <div class="wb" style="left:160px;top:200px">SORRY?</div>
+<div class="wb" style="left:1450px;top:220px">WHY?!</div>
+<div class="wb" style="left:120px;top:700px">ANSWER ME</div>
+<div class="wb" style="left:1480px;top:720px">HELLO??</div>
+<div class="wb" style="left:200px;top:470px">YOU OK?</div>
+<div class="wb" style="left:1440px;top:470px">SO THAT'S IT?</div>
+    <div id="sil" class="hl" style="position:absolute;left:0;right:0;top:330px;text-align:center;font-size:330px;line-height:1"><span class="blk">SILENCE</span></div>
+    <div id="sub5" style="position:absolute;left:0;right:0;top:690px;text-align:center;font-weight:900;font-size:56px">said more than any words.</div>
+    
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const S = (s) => document.querySelector('[data-composition-id="s5"] ' + s);
+    const SA = (s) => document.querySelectorAll('[data-composition-id="s5"] ' + s);
+
+tl.fromTo(SA('.wb'), {opacity:0, scale:.5}, {opacity:1, scale:1, duration:.25, ease:'back.out(2)', stagger:.08}, 0);
+tl.fromTo(S('#sil'), {opacity:0, scale:.85}, {opacity:1, scale:1, duration:.35, ease:'power3.out'}, .5);
+tl.to(SA('.wb'), {opacity:0, scale:.6, duration:.5, ease:'power2.in', stagger:.12}, 1.6);
+tl.fromTo(S('#sub5'), {opacity:0, y:20}, {opacity:1, y:0, duration:.3}, 1.3);
+
+    window.__timelines["s5"] = tl;
+  </script>
+</template>

@@ -1,0 +1,64 @@
+<template>
+  <style>
+.cap{position:absolute;left:50%;bottom:58px;font-family:Inter,sans-serif;transform:translateX(-50%);width:1500px;text-align:center;font-weight:900;font-size:50px;line-height:1.18;opacity:0;
+  background:rgba(251,248,242,.92);padding:14px 34px;border-radius:18px}
+.w{color:rgba(23,20,15,.52)}
+#root{background:transparent}
+</style>
+  <div id="root" data-composition-id="captions" data-width="1920" data-height="1080" data-layout-allow-caption-zone>
+    <div class="cap" id="captions-l0"><span class="w" id="captions-l0w0">A</span> <span class="w" id="captions-l0w1">man</span> <span class="w" id="captions-l0w2">who</span> <span class="w" id="captions-l0w3">begs</span> <span class="w" id="captions-l0w4">for</span> <span class="w" id="captions-l0w5">love</span> <span class="w" id="captions-l0w6">is</span> <span class="w" id="captions-l0w7">asking</span> <span class="w" id="captions-l0w8">her</span> <span class="w" id="captions-l0w9">to</span> <span class="w" id="captions-l0w10">value</span> <span class="w" id="captions-l0w11">him</span> <span class="w" id="captions-l0w12">more</span> <span class="w" id="captions-l0w13">than</span> <span class="w" id="captions-l0w14">he</span> <span class="w" id="captions-l0w15">values</span> <span class="w" id="captions-l0w16">himself.</span> </div>
+    <div class="cap" id="captions-l1"><span class="w" id="captions-l1w0">The</span> <span class="w" id="captions-l1w1">man</span> <span class="w" id="captions-l1w2">who</span> <span class="w" id="captions-l1w3">never</span> <span class="w" id="captions-l1w4">begs</span> <span class="w" id="captions-l1w5">isn't</span> <span class="w" id="captions-l1w6">cold.</span> </div>
+    <div class="cap" id="captions-l2"><span class="w" id="captions-l2w0">He</span> <span class="w" id="captions-l2w1">just</span> <span class="w" id="captions-l2w2">knows</span> <span class="w" id="captions-l2w3">one</span> <span class="w" id="captions-l2w4">thing.</span> </div>
+    <div class="cap" id="captions-l3"><span class="w" id="captions-l3w0">Love</span> <span class="w" id="captions-l3w1">you</span> <span class="w" id="captions-l3w2">have</span> <span class="w" id="captions-l3w3">to</span> <span class="w" id="captions-l3w4">beg</span> <span class="w" id="captions-l3w5">for</span> <span class="w" id="captions-l3w6">was</span> <span class="w" id="captions-l3w7">never</span> <span class="w" id="captions-l3w8">love.</span> </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+tl.fromTo('#captions-l0', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 0.24);
+tl.to('#captions-l0', {opacity:0, duration:.12}, 6.10);
+tl.fromTo('#captions-l0w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 0.30);
+tl.fromTo('#captions-l0w1', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 0.51);
+tl.fromTo('#captions-l0w2', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 0.79);
+tl.fromTo('#captions-l0w3', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 1.06);
+tl.fromTo('#captions-l0w4', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 1.40);
+tl.fromTo('#captions-l0w5', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 1.67);
+tl.fromTo('#captions-l0w6', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 2.01);
+tl.fromTo('#captions-l0w7', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 2.22);
+tl.fromTo('#captions-l0w8', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 2.68);
+tl.fromTo('#captions-l0w9', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 2.95);
+tl.fromTo('#captions-l0w10', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 3.17);
+tl.fromTo('#captions-l0w11', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 3.56);
+tl.fromTo('#captions-l0w12', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 3.84);
+tl.fromTo('#captions-l0w13', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 4.17);
+tl.fromTo('#captions-l0w14', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 4.51);
+tl.fromTo('#captions-l0w15', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 4.72);
+tl.fromTo('#captions-l0w16', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 5.18);
+tl.fromTo('#captions-l1', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 6.09);
+tl.to('#captions-l1', {opacity:0, duration:.12}, 8.77);
+tl.fromTo('#captions-l1w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 6.15);
+tl.fromTo('#captions-l1w1', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 6.42);
+tl.fromTo('#captions-l1w2', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 6.70);
+tl.fromTo('#captions-l1w3', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 6.97);
+tl.fromTo('#captions-l1w4', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 7.37);
+tl.fromTo('#captions-l1w5', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 7.70);
+tl.fromTo('#captions-l1w6', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 8.04);
+tl.fromTo('#captions-l2', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 8.76);
+tl.to('#captions-l2', {opacity:0, duration:.12}, 10.92);
+tl.fromTo('#captions-l2w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 8.82);
+tl.fromTo('#captions-l2w1', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 9.04);
+tl.fromTo('#captions-l2w2', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 9.40);
+tl.fromTo('#captions-l2w3', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 9.81);
+tl.fromTo('#captions-l2w4', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 10.10);
+tl.fromTo('#captions-l3', {opacity:0, y:18}, {opacity:1, y:0, duration:.18, ease:'power2.out'}, 10.91);
+tl.to('#captions-l3', {opacity:0, duration:.12}, 13.93);
+tl.fromTo('#captions-l3w0', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 10.97);
+tl.fromTo('#captions-l3w1', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 11.29);
+tl.fromTo('#captions-l3w2', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 11.56);
+tl.fromTo('#captions-l3w3', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 11.88);
+tl.fromTo('#captions-l3w4', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 12.08);
+tl.fromTo('#captions-l3w5', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 12.35);
+tl.fromTo('#captions-l3w6', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 12.61);
+tl.fromTo('#captions-l3w7', {color:'rgba(23,20,15,.52)'}, {color:'#C8541A', duration:.08}, 12.88);
+tl.fromTo('#captions-l3w8', {color:'rgba(23,20,15,.52)'}, {color:'#17140F', duration:.08}, 13.26);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

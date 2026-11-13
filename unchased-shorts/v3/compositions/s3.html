@@ -1,0 +1,33 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;overflow:hidden;background:#FBF8F2;font-family:Inter,sans-serif;color:#17140F}
+.hl{font-family:'League Gothic',Oswald,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.01em;color:#17140F}
+.blk{display:inline-block;background:#C8541A;color:#FBF8F2;padding:0 .14em}
+.blk-dark{display:inline-block;background:#17140F;color:#FBF8F2;padding:0 .14em}
+.char{position:absolute;transform-origin:50% 100%;margin-top:-80px}
+.char img{display:block;width:100%;height:auto}
+.floor{position:absolute;margin-top:-80px;height:4px;background:#17140F;border-radius:2px}
+.face{position:absolute;border-radius:50%;background:#C8541A;border:7px solid #17140F;overflow:hidden}
+.face img{position:absolute;left:50%;bottom:-2%;width:86%;transform:translateX(-50%)}
+.card{position:absolute;background:#fff;border:6px solid #17140F;border-radius:28px;box-shadow:12px 12px 0 #17140F}
+#pt img{transform-origin:50% 100%}</style>
+  <div id="root" data-composition-id="s3" data-width="1920" data-height="1080">
+
+    <div id="pt" class="char" style="left:400px;top:190px;width:350px"><img src="assets/char/pointing.png" alt=""></div>
+    <div class="floor" style="left:280px;top:945px;width:600px"></div>
+    <div id="one" style="position:absolute;left:1000px;top:250px;width:520px;height:520px;border-radius:50%;background:#C8541A;border:12px solid #17140F;display:flex;align-items:center;justify-content:center">
+      <span class="hl" style="font-size:400px;color:#FBF8F2;line-height:1">1</span></div>
+    
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const S = (s) => document.querySelector('[data-composition-id="s3"] ' + s);
+    const SA = (s) => document.querySelectorAll('[data-composition-id="s3"] ' + s);
+
+tl.fromTo(S('#pt'), {opacity:0, y:30}, {opacity:1, y:0, duration:.35, ease:'power3.out'}, 0);
+tl.fromTo(S('#pt img'), {rotation:0}, {rotation:-2, duration:.3, ease:'back.out(3)'}, .7);
+tl.fromTo(S('#one'), {opacity:0, scale:0, rotation:-30}, {opacity:1, scale:1, rotation:0, duration:.45, ease:'back.out(2)'}, .75);
+
+    window.__timelines["s3"] = tl;
+  </script>
+</template>

@@ -1,0 +1,35 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;overflow:hidden;background:#FBF8F2;font-family:Inter,sans-serif;color:#17140F}
+.hl{font-family:'League Gothic',Oswald,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.01em;color:#17140F}
+.blk{display:inline-block;background:#C8541A;color:#FBF8F2;padding:0 .14em}
+.blk-dark{display:inline-block;background:#17140F;color:#FBF8F2;padding:0 .14em}
+.char{position:absolute;transform-origin:50% 100%;margin-top:-80px}
+.char img{display:block;width:100%;height:auto}
+.floor{position:absolute;margin-top:-80px;height:4px;background:#17140F;border-radius:2px}
+.face{position:absolute;border-radius:50%;background:#C8541A;border:7px solid #17140F;overflow:hidden}
+.face img{position:absolute;left:50%;bottom:-2%;width:86%;transform:translateX(-50%)}
+.card{position:absolute;background:#fff;border:6px solid #17140F;border-radius:28px;box-shadow:12px 12px 0 #17140F}
+</style>
+  <div id="root" data-composition-id="s3" data-width="1920" data-height="1080">
+
+    <div id="dict" class="card" style="left:300px;top:200px;width:1320px;height:520px;padding:60px 80px">
+      <div id="word" style="font-family:'League Gothic';font-size:150px;line-height:1">re·ac·tance</div>
+      <div style="font-weight:700;font-size:34px;color:#C8541A;margin:8px 0 26px">noun · Jack Brehm, 1966</div>
+      <div id="def" style="font-weight:700;font-size:46px;line-height:1.3"></div>
+    </div>
+    
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const S = (s) => document.querySelector('[data-composition-id="s3"] ' + s);
+    const SA = (s) => document.querySelectorAll('[data-composition-id="s3"] ' + s);
+
+const def = "When a freedom we took for granted disappears, we suddenly want it back.";
+tl.fromTo(S('#dict'), {opacity:0, y:50, rotation:2}, {opacity:1, y:0, rotation:0, duration:.4, ease:'back.out(1.6)'}, 0);
+const el = S('#def'); const st = {n:0};
+tl.fromTo(st, {n:0}, {n:def.length, duration:1.5, ease:'none', onUpdate:()=>el.textContent = def.slice(0, Math.round(st.n))}, .55);
+
+    window.__timelines["s3"] = tl;
+  </script>
+</template>

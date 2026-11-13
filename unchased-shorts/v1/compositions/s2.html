@@ -1,0 +1,35 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;overflow:hidden;background:#FBF8F2;font-family:Inter,sans-serif;color:#17140F}
+.hl{font-family:'League Gothic',Oswald,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.01em;color:#17140F}
+.blk{display:inline-block;background:#C8541A;color:#FBF8F2;padding:0 .14em}
+.blk-dark{display:inline-block;background:#17140F;color:#FBF8F2;padding:0 .14em}
+.char{position:absolute;transform-origin:50% 100%;margin-top:-80px}
+.char img{display:block;width:100%;height:auto}
+.floor{position:absolute;margin-top:-80px;height:4px;background:#17140F;border-radius:2px}
+.face{position:absolute;border-radius:50%;background:#C8541A;border:7px solid #17140F;overflow:hidden}
+.face img{position:absolute;left:50%;bottom:-2%;width:86%;transform:translateX(-50%)}
+.card{position:absolute;background:#fff;border:6px solid #17140F;border-radius:28px;box-shadow:12px 12px 0 #17140F}
+</style>
+  <div id="root" data-composition-id="s2" data-width="1920" data-height="1080">
+
+    <div id="desk" style="position:absolute;left:0;right:0;top:700px;bottom:0;background:#EFE7DA;border-top:6px solid #17140F"></div>
+    <div id="ph2" style="position:absolute;left:760px;top:420px;width:400px;height:280px;perspective:900px">
+      <div id="ph2i" style="width:100%;height:100%;border:7px solid #17140F;border-radius:34px;background:#C8541A;transform-origin:50% 100%"></div>
+    </div>
+    <div id="t2" class="hl" style="position:absolute;left:0;right:0;top:150px;text-align:center;font-size:190px">HE JUST <span class="blk">STOPPED.</span></div>
+    
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const S = (s) => document.querySelector('[data-composition-id="s2"] ' + s);
+    const SA = (s) => document.querySelectorAll('[data-composition-id="s2"] ' + s);
+
+tl.fromTo(S('#ph2i'), {rotationX:0, background:'#C8541A'}, {rotationX:72, background:'#17140F', duration:.5, ease:'power3.in'}, .9);
+tl.fromTo(S('#ph2'), {y:-40}, {y:0, duration:.5, ease:'power3.in'}, .9);
+tl.fromTo(S('#t2'), {opacity:0, y:30}, {opacity:1, y:0, duration:.3, ease:'power3.out'}, .5);
+tl.fromTo(S('#desk'), {y:0}, {y:6, duration:.08, yoyo:true, repeat:1}, 1.4);
+
+    window.__timelines["s2"] = tl;
+  </script>
+</template>
