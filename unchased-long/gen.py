@@ -217,7 +217,9 @@ def main():
     for x in scenes:
         if x['sec'] not in seen:
             seen.add(x['sec']); m = int(x['_start'] if x['n'] > 1 else 0)
-            ch.append(f"{m//60}:{m%60:02d} {x['sec'] if x['sec']!='Hook' else 'Intro'}")
+            if ch and m - ch[-1][0] < 10: ch.pop()
+            ch.append((m, f"{m//60}:{m%60:02d} {x['sec'] if x['sec']!='Hook' else 'Intro'}"))
+    ch = [c[1] for c in ch]
     open(os.path.join(B, VID + '_chapters.txt'), 'w').write('\n'.join(ch) + '\n')
     print('total', total, 'scenes', len(scenes), 'captions', len(caps)); print('\n'.join(ch))
 
