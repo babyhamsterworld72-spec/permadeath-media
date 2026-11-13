@@ -1,0 +1,30 @@
+<template>
+  <style>
+#root{position:absolute;inset:0;overflow:hidden;background:#FBF8F2;font-family:Inter,sans-serif;color:#17140F}
+.stage{position:absolute;inset:0}
+.hl{position:absolute;font-family:'League Gothic',sans-serif;text-transform:uppercase;line-height:.95;color:#17140F;font-size:150px}
+.blk{display:inline-block;background:#C8541A;color:#FBF8F2;padding:0 .14em;margin-top:.06em}
+.char{position:absolute;transform-origin:50% 100%}
+.char img{display:block;width:100%;height:auto;transform-origin:50% 100%}
+.floor{position:absolute;height:5px;background:#17140F;border-radius:3px}
+.face{position:absolute;border-radius:50%;background:#C8541A;border:8px solid #17140F;overflow:hidden}
+.face img{position:absolute;left:50%;bottom:-2%;width:86%;transform:translateX(-50%)}
+.disc{position:absolute;border-radius:50%;background:#fff;border:8px solid #17140F;box-shadow:14px 14px 0 #17140F;display:flex;align-items:center;justify-content:center}
+.card{position:absolute;background:#fff;border:7px solid #17140F;border-radius:30px;box-shadow:14px 14px 0 #17140F}
+</style>
+  <div id="root" data-composition-id="s11" data-width="1920" data-height="1080">
+    <div class="stage" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="vis" class="face" style="left:1080px;top:200px;width:560px;height:560px;background:#C8541A"><img src="assets/char/face-sad.png" alt=""></div>
+<div id="h" class="hl" style="left:140px;top:250px;width:820px">RUNNING OUT OF <span class="blk">REASONS</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo(document.querySelector('[data-composition-id="s11"] #vis'), {opacity:0, y:50, scale:.92}, {opacity:1, y:0, scale:1, duration:.55, ease:'back.out(1.5)'}, .05);
+tl.fromTo(document.querySelector('[data-composition-id="s11"] #h'), {opacity:0, x:-50}, {opacity:1, x:0, duration:.45, ease:'power3.out'}, .35);
+tl.fromTo(document.querySelector('[data-composition-id="s11"] .blk'), {scaleX:0, transformOrigin:'0 50%'}, {scaleX:1, duration:.35, ease:'power3.out'}, 1.30);
+tl.fromTo(document.querySelector('[data-composition-id="s11"] #vis img'), {y:6}, {y:-6, duration:9.26, ease:'sine.inOut'}, .6);
+tl.fromTo(document.querySelector('[data-composition-id="s11"] .stage'), {scale:1}, {scale:1.035, duration:10.06, ease:'none'}, 0);
+    window.__timelines["s11"] = tl;
+  </script>
+</template>
