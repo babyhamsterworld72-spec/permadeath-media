@@ -27,6 +27,8 @@ I = {
  'stopwatch': f'<circle cx="200" cy="220" r="140" fill="{W}" {st}/><rect x="175" y="40" width="50" height="40" fill="{O}" {st}/><path d="M200 220V130M200 220L260 250" {st} stroke-width="14"/>',
  'eye': f'<path d="M20 200Q200 30 380 200Q200 370 20 200Z" fill="{W}" {st}/><circle cx="200" cy="200" r="70" fill="{O}" {st}/><circle cx="200" cy="200" r="30" fill="{K}"/>',
  'thermo': f'<circle cx="200" cy="200" r="150" fill="{W}" {st}/><path d="M90 250A120 120 0 1 1 310 250" fill="none" stroke="#D9D3C7" stroke-width="30"/><path d="M90 250A120 120 0 0 1 120 120" fill="none" stroke="{B}" stroke-width="30"/><path d="M200 200L120 140" {st} stroke-width="14"/><circle cx="200" cy="200" r="18" fill="{K}"/>',
+ 'jar': f'<rect x="130" y="40" width="140" height="40" rx="8" fill="{O}" {st}/><path d="M120 80H280Q320 120 320 180V330Q320 360 290 360H110Q80 360 80 330V180Q80 120 120 80Z" fill="#DDEBF2" {st}/><circle cx="170" cy="310" r="32" fill="#C9894A" {st} stroke-width="8"/><circle cx="235" cy="315" r="32" fill="#C9894A" {st} stroke-width="8"/>',
+ 'scale': f'<path d="M200 60V340M120 340H280" {st}/><path d="M60 120L340 100" {st}/><path d="M60 120L30 220H120Z" fill="{O}" {st}/><path d="M340 100L300 200H380Z" fill="{W}" {st}/>',
  'cage': f'<path d="M80 340H320V170A120 120 0 0 0 80 170Z" fill="#F2D49B" {st}/>' + ''.join(f'<path d="M{x} 340V{120 if 130<x<270 else 180}" {st} stroke-width="9"/>' for x in (120,160,200,240,280)) + f'<circle cx="200" cy="40" r="22" fill="#F2B33D" {st} stroke-width="8"/>',
 }
 

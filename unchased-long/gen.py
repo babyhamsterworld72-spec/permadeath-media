@@ -1,11 +1,17 @@
-"""Builds the V01 long video (Unchased) as a HyperFrames project in v01/."""
+"""Usage: python3 gen.py v02. Builds a long video (Unchased) as a HyperFrames project in v01/."""
 import json, os, re, shutil
 import numpy as np, soundfile as sf
 from icons import svg
-from spec_v01 import S
+import sys, importlib
+VID = sys.argv[1] if len(sys.argv) > 1 else 'v01'
+try:
+    S = importlib.import_module('spec_' + VID).S
+except ModuleNotFoundError:
+    import autospec
+    S = autospec.build(json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'channel-kit', VID + '.json')))['scenes'])
 
-B = os.path.dirname(os.path.abspath(__file__)); P = os.path.join(B, 'v01')
-KIT = json.load(open(os.path.join(B, '..', 'channel-kit', 'v01.json')))
+B = os.path.dirname(os.path.abspath(__file__)); P = os.path.join(B, VID)
+KIT = json.load(open(os.path.join(B, '..', 'channel-kit', VID + '.json')))
 SFX = os.path.join(B, '..', '.claude', 'skills', 'media-use', 'audio', 'assets', 'sfx')
 SHARED = os.path.join(B, '..', 'unchased-shorts', 'shared')
 GSAP = '<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>'
@@ -212,7 +218,7 @@ def main():
         if x['sec'] not in seen:
             seen.add(x['sec']); m = int(x['_start'] if x['n'] > 1 else 0)
             ch.append(f"{m//60}:{m%60:02d} {x['sec'] if x['sec']!='Hook' else 'Intro'}")
-    open(os.path.join(B, 'v01_chapters.txt'), 'w').write('\n'.join(ch) + '\n')
+    open(os.path.join(B, VID + '_chapters.txt'), 'w').write('\n'.join(ch) + '\n')
     print('total', total, 'scenes', len(scenes), 'captions', len(caps)); print('\n'.join(ch))
 
 
