@@ -38,5 +38,6 @@ for x, line, (vs, ve) in zip(kit['scenes'], lines, slots):
 out = out[:int(total * sr)]; out = out / np.abs(out).max() * 0.89
 os.makedirs(os.path.join(B, 'renders'), exist_ok=True)
 dst = os.path.join(B, 'renders', f'{VID}_ES.wav'); sf.write(dst, out, sr)
-subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', dst, '-af', 'loudnorm=I=-16:TP=-1.5', '-b:a', '192k', dst.replace('.wav', '.mp3')], check=True)
-print('wrote', dst.replace('.wav', '.mp3'), round(total, 2), 's')
+mp3 = os.path.join(B, 'renders', f'Unchased_{VID.upper()}_Spanish_dub.mp3')
+subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', dst, '-af', 'loudnorm=I=-16:TP=-1.5', '-b:a', '192k', mp3], check=True); os.remove(dst)
+print('wrote', mp3, round(total, 2), 's')
