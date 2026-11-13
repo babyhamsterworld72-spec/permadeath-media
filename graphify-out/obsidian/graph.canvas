@@ -1,0 +1,512 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "Short-Form Hook Reels",
+      "x": 0,
+      "y": 0,
+      "width": 660,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_three_rules_3am",
+      "type": "file",
+      "file": "Hook 3 rules after 3 AM (your building has...).md",
+      "x": 20,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_permadeath_account",
+      "type": "file",
+      "file": "PERMADEATH Instagram account.md",
+      "x": 220,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_media_r01_cover",
+      "type": "file",
+      "file": "Reel 1 cover 3 Rules After 3 AM.md",
+      "x": 420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_r01_reel",
+      "type": "file",
+      "file": "Reel r01_three_rules.mp4 (28s).md",
+      "x": 20,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_r02_reel",
+      "type": "file",
+      "file": "Reel r02_spot_it.mp4 (24s).md",
+      "x": 220,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_creepy_hand",
+      "type": "file",
+      "file": "Silhouette hand under a doorledge.md",
+      "x": 420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "Full Story & Premise",
+      "x": 740,
+      "y": 0,
+      "width": 660,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_full_story",
+      "type": "file",
+      "file": "Full story compilation Parts 1-9 (10 min).md",
+      "x": 760,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_media_long02_thumb",
+      "type": "file",
+      "file": "Long-form thumbnail 9 Nights. 1 Life. You control it..md",
+      "x": 960,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_one_life_rule",
+      "type": "file",
+      "file": "One life  permadeath rule (heart ONE LIFE).md",
+      "x": 1160,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_nine_nights_one_life",
+      "type": "file",
+      "file": "Premise 9 nights, 1 life, you control it.md",
+      "x": 760,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_quiet_hours_series",
+      "type": "file",
+      "file": "Quiet Hours (PERMADEATH Season 1 interactive story).md",
+      "x": 960,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_note_if_it_knocks",
+      "type": "file",
+      "file": "Written note If it knocks....md",
+      "x": 1160,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "Parts 8-9 Cliffhangers",
+      "x": 1480,
+      "y": 0,
+      "width": 660,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_media_s1p08_cover",
+      "type": "file",
+      "file": "Part 8 cover (s1p08_cover.jpg).md",
+      "x": 1500,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_part8_hook",
+      "type": "file",
+      "file": "Part 8 hook You never look.md",
+      "x": 1700,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_media_s1p09_cover",
+      "type": "file",
+      "file": "Part 9 cover (s1p09_cover.jpg).md",
+      "x": 1900,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_part9_hook",
+      "type": "file",
+      "file": "Part 9 hook 47 missed calls.md",
+      "x": 1500,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_s1p09_reel",
+      "type": "file",
+      "file": "Part 9 reel (s1p09_upload.mp4, 61s).md",
+      "x": 1700,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mom_calling_phone",
+      "type": "file",
+      "file": "Phone showing MOM calling.md",
+      "x": 1900,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "Game & Art Style",
+      "x": 0,
+      "y": 480,
+      "width": 660,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_vote_mechanic",
+      "type": "file",
+      "file": "Audience vote comment A, B or C.md",
+      "x": 20,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_dark_bedroom_scene",
+      "type": "file",
+      "file": "Dark bedroom with cat and lit door gap.md",
+      "x": 220,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stick_figure_style",
+      "type": "file",
+      "file": "Dark code-drawn stick-figure art style.md",
+      "x": 420,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_media_r02_cover",
+      "type": "file",
+      "file": "Reel 2 cover Find it in 5 seconds.md",
+      "x": 20,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_spot_it_game",
+      "type": "file",
+      "file": "Spot-the-wrong-thing engagement game (you live alone).md",
+      "x": 220,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "Repo & Hosting",
+      "x": 740,
+      "y": 480,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_raw_url_hosting",
+      "type": "file",
+      "file": "Fixed raw URL media hosting.md",
+      "x": 760,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_s1p08_reel",
+      "type": "file",
+      "file": "Part 8 reel (s1p08_upload.mp4).md",
+      "x": 960,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_readme_repo",
+      "type": "file",
+      "file": "permadeath-media repo.md",
+      "x": 760,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_media_r01_cover_creepy_hand",
+      "fromNode": "n_media_r01_cover",
+      "toNode": "n_creepy_hand",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_readme_repo_permadeath_account",
+      "fromNode": "n_readme_repo",
+      "toNode": "n_permadeath_account",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_r01_reel_permadeath_account",
+      "fromNode": "n_r01_reel",
+      "toNode": "n_permadeath_account",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_r02_reel_permadeath_account",
+      "fromNode": "n_r02_reel",
+      "toNode": "n_permadeath_account",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_quiet_hours_series_permadeath_account",
+      "fromNode": "n_quiet_hours_series",
+      "toNode": "n_permadeath_account",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_media_r01_cover_three_rules_3am",
+      "fromNode": "n_media_r01_cover",
+      "toNode": "n_three_rules_3am",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_r01_reel_media_r01_cover",
+      "fromNode": "n_r01_reel",
+      "toNode": "n_media_r01_cover",
+      "label": "references [INFERRED]"
+    },
+    {
+      "id": "e_r02_reel_media_r02_cover",
+      "fromNode": "n_r02_reel",
+      "toNode": "n_media_r02_cover",
+      "label": "references [INFERRED]"
+    },
+    {
+      "id": "e_media_r01_cover_media_r02_cover",
+      "fromNode": "n_media_r01_cover",
+      "toNode": "n_media_r02_cover",
+      "label": "semantically_similar_to [INFERRED]"
+    },
+    {
+      "id": "e_media_long02_thumb_nine_nights_one_life",
+      "fromNode": "n_media_long02_thumb",
+      "toNode": "n_nine_nights_one_life",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_nine_nights_one_life_quiet_hours_series",
+      "fromNode": "n_nine_nights_one_life",
+      "toNode": "n_quiet_hours_series",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_one_life_rule_nine_nights_one_life",
+      "fromNode": "n_one_life_rule",
+      "toNode": "n_nine_nights_one_life",
+      "label": "semantically_similar_to [INFERRED]"
+    },
+    {
+      "id": "e_full_story_note_if_it_knocks",
+      "fromNode": "n_full_story",
+      "toNode": "n_note_if_it_knocks",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_full_story_one_life_rule",
+      "fromNode": "n_full_story",
+      "toNode": "n_one_life_rule",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_media_s1p08_cover_quiet_hours_series",
+      "fromNode": "n_media_s1p08_cover",
+      "toNode": "n_quiet_hours_series",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_media_s1p09_cover_quiet_hours_series",
+      "fromNode": "n_media_s1p09_cover",
+      "toNode": "n_quiet_hours_series",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_quiet_hours_series_stick_figure_style",
+      "fromNode": "n_quiet_hours_series",
+      "toNode": "n_stick_figure_style",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_full_story_quiet_hours_series",
+      "fromNode": "n_full_story",
+      "toNode": "n_quiet_hours_series",
+      "label": "references [INFERRED]"
+    },
+    {
+      "id": "e_full_story_s1p08_reel",
+      "fromNode": "n_full_story",
+      "toNode": "n_s1p08_reel",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_full_story_s1p09_reel",
+      "fromNode": "n_full_story",
+      "toNode": "n_s1p09_reel",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_full_story_media_long02_thumb",
+      "fromNode": "n_full_story",
+      "toNode": "n_media_long02_thumb",
+      "label": "references [INFERRED]"
+    },
+    {
+      "id": "e_media_s1p08_cover_mom_calling_phone",
+      "fromNode": "n_media_s1p08_cover",
+      "toNode": "n_mom_calling_phone",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_part9_hook_mom_calling_phone",
+      "fromNode": "n_part9_hook",
+      "toNode": "n_mom_calling_phone",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_media_s1p08_cover_part8_hook",
+      "fromNode": "n_media_s1p08_cover",
+      "toNode": "n_part8_hook",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_part9_hook_part8_hook",
+      "fromNode": "n_part9_hook",
+      "toNode": "n_part8_hook",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_media_s1p09_cover_part9_hook",
+      "fromNode": "n_media_s1p09_cover",
+      "toNode": "n_part9_hook",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_s1p09_reel_media_s1p09_cover",
+      "fromNode": "n_s1p09_reel",
+      "toNode": "n_media_s1p09_cover",
+      "label": "references [INFERRED]"
+    },
+    {
+      "id": "e_media_s1p08_cover_vote_mechanic",
+      "fromNode": "n_media_s1p08_cover",
+      "toNode": "n_vote_mechanic",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_readme_repo_media_s1p08_cover",
+      "fromNode": "n_readme_repo",
+      "toNode": "n_media_s1p08_cover",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_s1p08_reel_media_s1p08_cover",
+      "fromNode": "n_s1p08_reel",
+      "toNode": "n_media_s1p08_cover",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_media_s1p09_cover_media_s1p08_cover",
+      "fromNode": "n_media_s1p09_cover",
+      "toNode": "n_media_s1p08_cover",
+      "label": "semantically_similar_to [INFERRED]"
+    },
+    {
+      "id": "e_media_r02_cover_dark_bedroom_scene",
+      "fromNode": "n_media_r02_cover",
+      "toNode": "n_dark_bedroom_scene",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_dark_bedroom_scene_stick_figure_style",
+      "fromNode": "n_dark_bedroom_scene",
+      "toNode": "n_stick_figure_style",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_media_r02_cover_spot_it_game",
+      "fromNode": "n_media_r02_cover",
+      "toNode": "n_spot_it_game",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_spot_it_game_vote_mechanic",
+      "fromNode": "n_spot_it_game",
+      "toNode": "n_vote_mechanic",
+      "label": "semantically_similar_to [INFERRED]"
+    },
+    {
+      "id": "e_readme_repo_raw_url_hosting",
+      "fromNode": "n_readme_repo",
+      "toNode": "n_raw_url_hosting",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_readme_repo_s1p08_reel",
+      "fromNode": "n_readme_repo",
+      "toNode": "n_s1p08_reel",
+      "label": "references [EXTRACTED]"
+    }
+  ]
+}
