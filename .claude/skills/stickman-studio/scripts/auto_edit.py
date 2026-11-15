@@ -261,13 +261,18 @@ def render_captions(p, words, W, H, vertical):
                 pieces = [(shape(tx), {}) for tx in texts]
             widths = [dr.textlength(tx, font=font, **kw) for tx, kw in pieces]
             total = sum(widths) + gap * (len(pieces) - 1)
-            x = (W + total) / 2  # right edge; Arabic reads right -> left
+            rtl = any('\u0600' <= ch <= '\u06ff' for tx in texts for ch in tx)
+            if not rtl:  # Latin etc.: plain left -> right, no shaping
+                pieces = [(tx, {}) for tx in texts]
+                widths = [dr.textlength(tx, font=font) for tx, _ in pieces]
+                total = sum(widths) + gap * (len(pieces) - 1)
+            x = (W + total) / 2 if rtl else (W - total) / 2  # Arabic reads right -> left
             for j, ((tx, kw), wd) in enumerate(zip(pieces, widths)):
-                x -= wd
+                if rtl: x -= wd
                 col = (255, 214, 0, 255) if j == k else (255, 255, 255, 255)
                 dr.text((x, bh / 2), tx, font=font, fill=col, anchor='lm', stroke_width=max(4, size // 12),
                         stroke_fill=(0, 0, 0, 255), **kw)
-                x -= gap
+                x = x - gap if rtl else x + wd + gap
             f = os.path.join(d, f'{i:04d}.png'); img.save(f)
             entries.append((s, e, f))
     # absolute timeline (no drift): each image runs until the next one starts, gaps are blank

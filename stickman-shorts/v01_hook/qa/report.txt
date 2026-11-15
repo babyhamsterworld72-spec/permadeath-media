@@ -1,0 +1,4 @@
+snap: 8 sentences moved, mean |shift| 0.16s, max 0.30s
+video 14.87s, voice 14.47s, last word ends 14.03s -> OK
+loudness -14.6 LUFS (target -15.0)
+check qa/still_*.jpg: Arabic letters joined, right-to-left, highlighted word = spoken word

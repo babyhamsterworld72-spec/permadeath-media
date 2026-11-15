@@ -1,0 +1,7 @@
+beat,start,end,dur,type,voice_text,camera,sfx
+1,0,2,2,still,He didn't slam a door.,push-in,
+2,2,4,2,still,He didn't send a long message.,pan,
+3,4,7,3,still,"One Tuesday, he just stopped replying.",push-in,
+4,7,9,2,still,Everyone called it sudden.,pull-out,
+5,9,10,1,still,It wasn't.,close,
+6,10,14,4,still,"He decided months ago, in silence.",push-in,
