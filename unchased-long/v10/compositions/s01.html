@@ -25,6 +25,7 @@ tl.fromTo(document.querySelector('[data-composition-id="s01"] #h'), {opacity:0, 
 tl.fromTo(document.querySelector('[data-composition-id="s01"] .blk'), {scaleX:0, transformOrigin:'0 50%'}, {scaleX:1, duration:.35, ease:'power3.out'}, 1.30);
 tl.fromTo(document.querySelector('[data-composition-id="s01"] #vis img'), {y:6}, {y:-6, duration:6.21, ease:'sine.inOut'}, .6);
 tl.fromTo(document.querySelector('[data-composition-id="s01"] .stage'), {scale:1}, {scale:1.035, duration:7.01, ease:'none'}, 0);
+tl.to(document.querySelector('[data-composition-id="s01"] .stage'), {opacity:0, x:-80, duration:.25, ease:'power2.in'}, 6.74);
     window.__timelines["s01"] = tl;
   </script>
 </template>
