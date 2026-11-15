@@ -2,6 +2,7 @@
 import json, os, re, shutil
 import numpy as np, soundfile as sf
 from icons import svg
+import stick
 import sys, importlib
 VID = sys.argv[1] if len(sys.argv) > 1 else 'v01'
 try:
@@ -80,6 +81,8 @@ def scene_html(n, sid, dur, side):
         else:
             js.append(f"tl.fromTo({T('#vis img')}, {{y:6}}, {{y:-6, duration:{max(dur-0.8,1):.2f}, ease:'sine.inOut'}}, .6);")
     js.append(f"tl.fromTo({T('.stage')}, {{scale:1}}, {{scale:1.035, duration:{dur:.2f}, ease:'none'}}, 0);")
+    if kind != 'title':
+        js.append(f"tl.to({T('.stage')}, {{opacity:0, x:-80, duration:.25, ease:'power2.in'}}, {dur-0.27:.2f});")
     return f"""<template>
   <style>{CSS}</style>
   <div id="root" data-composition-id="{sid}" data-width="1920" data-height="1080">
@@ -145,6 +148,7 @@ def main():
     scenes = KIT['scenes']
     t = 0.3; chunks = []; sr = 24000; hosts = []; caps = []; sfx = []; side = 0
     chunks.append(np.zeros(int(t * sr)))
+    pose_i = 0
     for x in scenes:
         n = x['n']; a, sr = sf.read(os.path.join(P, f'assets/vo/s{n:02d}.wav'))
         kind = S[n][2]
@@ -153,7 +157,14 @@ def main():
         vs = t + pre; ve = vs + len(a) / sr; dur = (ve + post) - t
         chunks += [np.zeros(int(pre * sr)), a, np.zeros(int(post * sr))]
         sid = f's{n:02d}'
-        open(os.path.join(P, 'compositions', sid + '.html'), 'w').write(scene_html(n, sid, dur, side))
+        if kind == 'pose':
+            pose_i += 1
+        if kind == 'pose' and pose_i % 2 == 0:
+            tpl = stick.pick_template(x['vo'], pose_i)
+            html = stick.scene(sid, dur, headline(S[n][0], S[n][1]), tpl, CSS)
+        else:
+            html = scene_html(n, sid, dur, side)
+        open(os.path.join(P, 'compositions', sid + '.html'), 'w').write(html)
         if kind != 'title': side = 1 - side
         hosts.append(f'<div id="{sid}" data-composition-id="{sid}" data-composition-src="compositions/{sid}.html" data-start="{t:.2f}" data-duration="{dur:.2f}" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:1"></div>')
         sents = split_sentences(x['vo']); tot = sum(len(s) for s in sents); c = vs
