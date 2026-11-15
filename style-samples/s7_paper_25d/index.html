@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Inter:wght@500;700;900&display=swap">
+<style>
+*{margin:0;padding:0;box-sizing:border-box} html,body{width:1920px;height:1080px;overflow:hidden;background:#F4D7A8}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#F4D7A8;font-family:Inter,sans-serif}
+.abs{position:absolute} .hl{font-family:'League Gothic',sans-serif;text-transform:uppercase;line-height:.92}
+.cap{position:absolute;left:0;right:0;bottom:70px;text-align:center;font:900 46px Inter;color:#17140F;opacity:0}
+
+#cam{position:absolute;inset:0;perspective:1400px;perspective-origin:50% 45%}
+#rig{position:absolute;inset:0;transform-style:preserve-3d}
+.layer{position:absolute;left:-400px;top:-200px;width:2720px;height:1480px;transform-style:preserve-3d}
+.p{position:absolute;filter:drop-shadow(0 18px 10px rgba(0,0,0,.25))}
+.cap{z-index:9}
+
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1920" data-height="1080">
+
+<div id="cam"><div id="rig">
+  <div class="layer" style="transform:translateZ(-900px) scale(1.65);background:linear-gradient(#F4D7A8,#EFC28A)"></div>
+  <div class="layer" style="transform:translateZ(-600px) scale(1.43)"><svg class="p" width="2720" height="1480"><path d="M0 900 Q400 640 800 860 T1600 820 T2720 840 V1480 H0Z" fill="#D98B5F"/></svg></div>
+  <div class="layer" style="transform:translateZ(-300px) scale(1.21)"><svg class="p" width="2720" height="1480"><path d="M0 1000 Q500 820 1000 960 T2000 940 T2720 980 V1480 H0Z" fill="#B85E3E"/><circle cx="2000" cy="420" r="150" fill="#FBEBC8"/></svg></div>
+  <div class="layer" style="transform:translateZ(0)"><svg class="p" width="2720" height="1480"><path d="M0 1120 Q800 1060 1600 1110 T2720 1100 V1480 H0Z" fill="#6E3A2E"/><g id="her"></g><g id="him"></g>
+     <g id="phone2"><rect x="1050" y="660" width="110" height="190" rx="18" fill="#fff" stroke="#17140F" stroke-width="7"/><rect x="1068" y="740" width="74" height="30" rx="8" fill="#C8541A"/></g></svg></div>
+  <div class="layer" style="transform:translateZ(300px) scale(.79)"><svg class="p" width="2720" height="1480"><path d="M-50 1480 L-50 980 Q120 940 260 1080 L380 1480Z" fill="#3F211B"/><path d="M2770 1480 L2770 1000 Q2600 960 2480 1100 L2400 1480Z" fill="#3F211B"/></svg></div>
+</div></div>
+<div class="cap" id="cap0">He didn't block her.</div><div class="cap" id="cap1">He didn't argue.</div><div class="cap" id="cap2">One day, he just stopped.</div>
+
+<audio id="vo" class="clip" src="assets/vo.wav" data-start="0" data-duration="6" data-track-index="10" data-volume="1"></audio>
+<audio id="fx0" class="clip" src="assets/pop.mp3" data-start="0.30" data-duration="0.90" data-track-index="20" data-volume="0.3"></audio>
+<audio id="fx1" class="clip" src="assets/whoosh.mp3" data-start="1.90" data-duration="0.90" data-track-index="21" data-volume="0.2"></audio>
+<audio id="fx2" class="clip" src="assets/whoosh-short.mp3" data-start="3.60" data-duration="0.90" data-track-index="22" data-volume="0.25"></audio>
+</div>
+<script>
+
+const NS='http://www.w3.org/2000/svg';
+function mk(tag,a,p){const e=document.createElementNS(NS,tag);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+function man(id,o){
+  o=Object.assign({stroke:'#17140F',w:8,head:'#fff',fill:false,scarf:'#C8341F',r:30},o);
+  const g=document.getElementById(id); const P={};
+  const L=(p,len,w)=>mk('line',{x1:0,y1:0,x2:0,y2:len,stroke:o.stroke,'stroke-width':w||o.w,'stroke-linecap':'round'},p);
+  const J=(p,x,y)=>mk('g',{},mk('g',{transform:`translate(${x},${y})`},p));
+  const body=J(g,0,0);
+  for(const s of ['L','R']){const th=J(body,0,0);L(th,52);const sh=J(th,0,52);L(sh,52);P['th'+s]=th;P['sh'+s]=sh;}
+  mk('line',{x1:0,y1:0,x2:0,y2:-112,stroke:o.stroke,'stroke-width':o.w,'stroke-linecap':'round'},body);
+  for(const s of ['L','R']){const ua=J(body,0,-100);L(ua,44);const fa=J(ua,0,44);L(fa,40);P['ua'+s]=ua;P['fa'+s]=fa;}
+  const hd=J(body,0,-148);
+  mk('circle',{cx:0,cy:0,r:o.r,fill:o.fill?o.stroke:o.head,stroke:o.stroke,'stroke-width':o.w},hd);
+  const eyes=mk('g',{},hd);
+  if(o.fill){mk('ellipse',{cx:-10,cy:-4,rx:5,ry:8,fill:'#fff'},eyes);mk('ellipse',{cx:10,cy:-4,rx:5,ry:8,fill:'#fff'},eyes);}
+  else{mk('circle',{cx:-10,cy:-5,r:4,fill:o.stroke},eyes);mk('circle',{cx:10,cy:-5,r:4,fill:o.stroke},eyes);
+       P.mouth=mk('path',{d:'M-9 12 L9 12',stroke:o.stroke,'stroke-width':4,fill:'none','stroke-linecap':'round'},hd);}
+  if(o.scarf){mk('path',{d:'M-20 -122 L20 -122 L18 -108 L-18 -108Z',fill:o.scarf,stroke:o.stroke,'stroke-width':3},body);
+              mk('path',{d:'M6 -110 L18 -110 L24 -72 L12 -72Z',fill:o.scarf,stroke:o.stroke,'stroke-width':3},body);}
+  P.eyes=eyes;P.body=body;P.head=hd;P.root=g;
+  const S={x:0,y:0,s:1,lean:0,thL:10,thR:-10,shL:0,shR:0,uaL:14,uaR:-14,faL:0,faR:0,hd:0,blink:1,face:1};
+  P.S=S; return P;
+}
+function pose(P){const S=P.S;
+  P.root.setAttribute('transform',`translate(${S.x},${S.y-104*S.s}) scale(${S.s*S.face},${S.s})`);
+  P.body.setAttribute('transform',`rotate(${S.lean})`);
+  for(const k of ['thL','thR','shL','shR','uaL','uaR','faL','faR'])P[k].setAttribute('transform',`rotate(${S[k]})`);
+  P.head.setAttribute('transform',`rotate(${S.hd})`);
+  P.eyes.setAttribute('transform',`scale(1,${S.blink})`);
+}
+function walk(tl,P,t0,dur,dx,step=0.32){
+  tl.to(P.S,{x:P.S.x+dx,duration:dur,ease:'none'},t0);
+  for(let t=t0,k=0;t<t0+dur-0.05;t+=step,k++){const a=k%2?1:-1;
+    tl.to(P.S,{thL:24*a,thR:-24*a,shL:a>0?0:20,shR:a>0?20:0,uaL:-22*a,uaR:22*a,duration:step,ease:'sine.inOut'},t);}
+  tl.to(P.S,{thL:10,thR:-10,shL:0,shR:0,uaL:14,uaR:-14,duration:0.2},t0+dur);
+}
+function blink(tl,P,t){tl.to(P.S,{blink:0.1,duration:0.06},t);tl.to(P.S,{blink:1,duration:0.08},t+0.08);}
+function breathe(tl,P,t0,t1){for(let t=t0,k=0;t<t1;t+=1.1,k++)tl.to(P.S,{lean:k%2?0:1.5,duration:1.1,ease:'sine.inOut'},t);}
+
+const tl=gsap.timeline({paused:true});
+const FIG=[];
+
+const H=man('him',{w:10}); const W=man('her',{w:10,scarf:'#2F7D4F'}); FIG.push(H,W);
+Object.assign(H.S,{x:1260,y:1120,s:1.7}); Object.assign(W.S,{x:1660,y:1120,s:1.6,face:-1});
+tl.fromTo('#rig',{x:120,z:-120,rotationY:-6},{x:-260,z:160,rotationY:5,duration:6,ease:'sine.inOut'},0);
+tl.to(H.S,{uaR:-110,faR:-50,duration:.4},.2);
+tl.fromTo('#phone2',{opacity:0},{opacity:1,duration:.2},.35);
+tl.to('#phone2',{opacity:0,y:40,duration:.25},1.4); tl.to(H.S,{uaR:-14,faR:0,duration:.35},1.4);
+tl.to(W.S,{uaL:140,uaR:-140,lean:-6,duration:.25,ease:'back.out(2)'},2.0);
+for(let k=0;k<3;k++)tl.to(W.S,{uaL:k%2?140:110,uaR:k%2?-140:-110,duration:.2},2.25+k*.22);
+blink(tl,H,2.7); breathe(tl,H,1.8,3.6);
+tl.to(W.S,{uaL:14,uaR:-14,lean:0,duration:.3},3.3);
+tl.to(H.S,{face:-1,duration:.01},3.65);
+walk(tl,H,3.7,2.2,-700,.32);
+tl.fromTo('#cap0',{opacity:0,y:12},{opacity:1,y:0,duration:.15},0.10);tl.to('#cap0',{opacity:0,duration:.12},1.78);
+tl.fromTo('#cap1',{opacity:0,y:12},{opacity:1,y:0,duration:.15},1.83);tl.to('#cap1',{opacity:0,duration:.12},3.49);
+tl.fromTo('#cap2',{opacity:0,y:12},{opacity:1,y:0,duration:.15},3.54);tl.to('#cap2',{opacity:0,duration:.12},5.56);
+tl.eventCallback('onUpdate',()=>FIG.forEach(pose)); FIG.forEach(pose);
+tl.set({},{},6);
+window.__timelines["main"]=tl;
+</script>
+</body></html>

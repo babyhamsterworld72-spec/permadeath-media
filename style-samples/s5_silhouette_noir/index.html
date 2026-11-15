@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Inter:wght@500;700;900&display=swap">
+<style>
+*{margin:0;padding:0;box-sizing:border-box} html,body{width:1920px;height:1080px;overflow:hidden;background:#1B1530}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#1B1530;font-family:Inter,sans-serif}
+.abs{position:absolute} .hl{font-family:'League Gothic',sans-serif;text-transform:uppercase;line-height:.92}
+.cap{position:absolute;left:0;right:0;bottom:70px;text-align:center;font:900 46px Inter;color:#17140F;opacity:0}
+
+#sky{position:absolute;inset:0;background:linear-gradient(180deg,#1B1530 0%,#5B2A4A 45%,#E0703A 78%,#F6B565 100%)}
+#glow{position:absolute;left:1240px;top:420px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,#FFE3A8 0%,rgba(255,227,168,0) 65%)}
+#ground{position:absolute;left:0;right:0;top:820px;bottom:0;background:#0D0A12}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(0,0,0,0) 55%,rgba(0,0,0,.6) 100%)}
+.rain{position:absolute;width:3px;height:80px;background:rgba(255,235,210,.28)}
+.cap{color:#FBEBD0}
+
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1920" data-height="1080">
+
+<div id="sky"></div><div id="glow"></div>
+<svg class="abs" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <g fill="#0D0A12"><rect x="80" y="520" width="160" height="300"/><rect x="260" y="440" width="120" height="380"/><rect x="1620" y="500" width="200" height="320"/>
+  <rect x="1080" y="300" width="14" height="520"/><path d="M1094 300 Q1180 300 1190 340 L1170 350 Q1150 320 1094 322Z"/></g>
+  <polygon id="beam" points="1180,345 1060,820 1320,820" fill="rgba(255,230,170,.18)"/>
+  <g id="her"></g><g id="him"></g>
+</svg>
+<div id="rainbox"></div>
+<div id="vig"></div>
+<div class="cap" id="cap0" style="color:#FBEBD0">He didn't block her.</div><div class="cap" id="cap1" style="color:#FBEBD0">He didn't argue.</div><div class="cap" id="cap2" style="color:#FBEBD0">One day, he just stopped.</div>
+
+<audio id="vo" class="clip" src="assets/vo.wav" data-start="0" data-duration="6" data-track-index="10" data-volume="1"></audio>
+<audio id="fx0" class="clip" src="assets/whoosh.mp3" data-start="1.90" data-duration="0.90" data-track-index="20" data-volume="0.2"></audio>
+<audio id="fx1" class="clip" src="assets/whoosh.mp3" data-start="3.60" data-duration="0.90" data-track-index="21" data-volume="0.2"></audio>
+</div>
+<script>
+
+const NS='http://www.w3.org/2000/svg';
+function mk(tag,a,p){const e=document.createElementNS(NS,tag);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+function man(id,o){
+  o=Object.assign({stroke:'#17140F',w:8,head:'#fff',fill:false,scarf:'#C8341F',r:30},o);
+  const g=document.getElementById(id); const P={};
+  const L=(p,len,w)=>mk('line',{x1:0,y1:0,x2:0,y2:len,stroke:o.stroke,'stroke-width':w||o.w,'stroke-linecap':'round'},p);
+  const J=(p,x,y)=>mk('g',{},mk('g',{transform:`translate(${x},${y})`},p));
+  const body=J(g,0,0);
+  for(const s of ['L','R']){const th=J(body,0,0);L(th,52);const sh=J(th,0,52);L(sh,52);P['th'+s]=th;P['sh'+s]=sh;}
+  mk('line',{x1:0,y1:0,x2:0,y2:-112,stroke:o.stroke,'stroke-width':o.w,'stroke-linecap':'round'},body);
+  for(const s of ['L','R']){const ua=J(body,0,-100);L(ua,44);const fa=J(ua,0,44);L(fa,40);P['ua'+s]=ua;P['fa'+s]=fa;}
+  const hd=J(body,0,-148);
+  mk('circle',{cx:0,cy:0,r:o.r,fill:o.fill?o.stroke:o.head,stroke:o.stroke,'stroke-width':o.w},hd);
+  const eyes=mk('g',{},hd);
+  if(o.fill){mk('ellipse',{cx:-10,cy:-4,rx:5,ry:8,fill:'#fff'},eyes);mk('ellipse',{cx:10,cy:-4,rx:5,ry:8,fill:'#fff'},eyes);}
+  else{mk('circle',{cx:-10,cy:-5,r:4,fill:o.stroke},eyes);mk('circle',{cx:10,cy:-5,r:4,fill:o.stroke},eyes);
+       P.mouth=mk('path',{d:'M-9 12 L9 12',stroke:o.stroke,'stroke-width':4,fill:'none','stroke-linecap':'round'},hd);}
+  if(o.scarf){mk('path',{d:'M-20 -122 L20 -122 L18 -108 L-18 -108Z',fill:o.scarf,stroke:o.stroke,'stroke-width':3},body);
+              mk('path',{d:'M6 -110 L18 -110 L24 -72 L12 -72Z',fill:o.scarf,stroke:o.stroke,'stroke-width':3},body);}
+  P.eyes=eyes;P.body=body;P.head=hd;P.root=g;
+  const S={x:0,y:0,s:1,lean:0,thL:10,thR:-10,shL:0,shR:0,uaL:14,uaR:-14,faL:0,faR:0,hd:0,blink:1,face:1};
+  P.S=S; return P;
+}
+function pose(P){const S=P.S;
+  P.root.setAttribute('transform',`translate(${S.x},${S.y-104*S.s}) scale(${S.s*S.face},${S.s})`);
+  P.body.setAttribute('transform',`rotate(${S.lean})`);
+  for(const k of ['thL','thR','shL','shR','uaL','uaR','faL','faR'])P[k].setAttribute('transform',`rotate(${S[k]})`);
+  P.head.setAttribute('transform',`rotate(${S.hd})`);
+  P.eyes.setAttribute('transform',`scale(1,${S.blink})`);
+}
+function walk(tl,P,t0,dur,dx,step=0.32){
+  tl.to(P.S,{x:P.S.x+dx,duration:dur,ease:'none'},t0);
+  for(let t=t0,k=0;t<t0+dur-0.05;t+=step,k++){const a=k%2?1:-1;
+    tl.to(P.S,{thL:24*a,thR:-24*a,shL:a>0?0:20,shR:a>0?20:0,uaL:-22*a,uaR:22*a,duration:step,ease:'sine.inOut'},t);}
+  tl.to(P.S,{thL:10,thR:-10,shL:0,shR:0,uaL:14,uaR:-14,duration:0.2},t0+dur);
+}
+function blink(tl,P,t){tl.to(P.S,{blink:0.1,duration:0.06},t);tl.to(P.S,{blink:1,duration:0.08},t+0.08);}
+function breathe(tl,P,t0,t1){for(let t=t0,k=0;t<t1;t+=1.1,k++)tl.to(P.S,{lean:k%2?0:1.5,duration:1.1,ease:'sine.inOut'},t);}
+
+const tl=gsap.timeline({paused:true});
+const FIG=[];
+
+const H=man('him',{stroke:'#0D0A12',fill:true,w:12,r:30,scarf:'#C8341F'}); const W=man('her',{stroke:'#0D0A12',fill:true,w:12,r:28,scarf:false}); FIG.push(H,W);
+Object.assign(H.S,{x:820,y:820,s:1.6}); Object.assign(W.S,{x:560,y:820,s:1.5});
+const rb=document.getElementById('rainbox');
+for(let i=0;i<60;i++){const d=document.createElement('div');d.className='rain';d.style.left=((i*97)%1920)+'px';d.style.top=(-100-((i*53)%900))+'px';d.style.transform='rotate(12deg)';rb.appendChild(d);
+  tl.fromTo(d,{y:0},{y:1300,duration:.9,ease:'none',repeat:6},(i%9)*.1);}
+breathe(tl,H,0,1.8);
+tl.to(W.S,{uaR:-110,faR:-30,duration:.4},.3); tl.to(W.S,{uaR:-14,faR:0,duration:.4},1.2);
+tl.to(H.S,{hd:8,duration:.5},.6);
+tl.to(W.S,{uaL:130,uaR:-130,lean:6,duration:.25,ease:'back.out(2)'},2.0);
+for(let k=0;k<3;k++)tl.to(W.S,{uaL:k%2?130:100,uaR:k%2?-130:-100,duration:.2},2.25+k*.22);
+tl.to(H.S,{hd:0,duration:.4},2.2); blink(tl,H,2.8);
+tl.to(W.S,{uaL:14,uaR:-14,lean:0,duration:.3},3.2);
+tl.to(H.S,{face:1,duration:.01},3.6);
+walk(tl,H,3.7,2.2,520,.34);
+tl.to(H.S,{s:1.35,duration:2.2,ease:'none'},3.7);
+tl.to('#glow',{scale:1.25,duration:2.2,transformOrigin:'50% 50%'},3.7);
+tl.to(W.root,{opacity:.35,duration:1.5},3.8);
+tl.fromTo('#cap0',{opacity:0,y:12},{opacity:1,y:0,duration:.15},0.10);tl.to('#cap0',{opacity:0,duration:.12},1.78);
+tl.fromTo('#cap1',{opacity:0,y:12},{opacity:1,y:0,duration:.15},1.83);tl.to('#cap1',{opacity:0,duration:.12},3.49);
+tl.fromTo('#cap2',{opacity:0,y:12},{opacity:1,y:0,duration:.15},3.54);tl.to('#cap2',{opacity:0,duration:.12},5.56);
+tl.eventCallback('onUpdate',()=>FIG.forEach(pose)); FIG.forEach(pose);
+tl.set({},{},6);
+window.__timelines["main"]=tl;
+</script>
+</body></html>
