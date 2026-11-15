@@ -33,6 +33,7 @@ tl.to(document.querySelector('[data-composition-id="s02"] #vis img'), {scaleY:1,
 tl.to(document.querySelector('[data-composition-id="s02"] #vis img'), {scaleY:1.012, duration:1.2, ease:'sine.inOut'}, 7.80);
 tl.fromTo(document.querySelector('[data-composition-id="s02"] #vis'), {x:0}, {x:180, duration:9.25, ease:'none'}, .1);
 tl.fromTo(document.querySelector('[data-composition-id="s02"] .stage'), {scale:1}, {scale:1.035, duration:9.25, ease:'none'}, 0);
+tl.to(document.querySelector('[data-composition-id="s02"] .stage'), {opacity:0, x:-80, duration:.25, ease:'power2.in'}, 8.98);
     window.__timelines["s02"] = tl;
   </script>
 </template>
