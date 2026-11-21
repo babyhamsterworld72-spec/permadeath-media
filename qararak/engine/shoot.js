@@ -1,0 +1,3 @@
+const {chromium}=require('playwright');const path=require('path');
+(async()=>{const b=await chromium.launch();const ks=process.argv.slice(2);const dims={pfp_logo:[1080,1080],pfp_mascot:[1080,1080],pfp_mascot_dark:[1080,1080],yt_banner:[2560,1440],cover_ep1:[1080,1920],yt_thumb_long:[1280,720]};
+for(const k of ks){const [w,h]=dims[k];const pg=await b.newPage({viewport:{width:w,height:h}});await pg.goto('file://'+path.resolve('stills.html')+'?k='+k);await pg.waitForLoadState('networkidle');await pg.evaluate(()=>window.__ready);await pg.screenshot({path:`out/${k}.png`});await pg.close()}await b.close()})();
