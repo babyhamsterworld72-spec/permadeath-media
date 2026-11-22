@@ -173,7 +173,7 @@ function bubble(x,txt,side,y,k,opt={}){const fs=opt.fs||54;x.save();x.font=`700 
  x.fillStyle='#e9edef';x.textAlign='right';x.textBaseline='top';lines.forEach((l,i)=>x.fillText(l,bx+bw-35,y+20+i*fs*1.5));x.restore();return bh}
 function typingDots(x,t,y){x.save();pill(x,880,y+50,200,100,50,'#1f2c34');for(let k=0;k<3;k++){x.fillStyle='#8aa0ad';x.beginPath();x.arc(840+k*40,y+50-12*Math.max(0,Math.sin(t*9-k*.9)),12,0,7);x.fill()}x.restore();return 100}
 // ---------- karaoke captions from TIMING ----------
-const KEY=['خمسين','ألف','ريال.','أبو','فهد.','فصلك','الكل.','مثلك.','أحد','شافك.','ديونك','شكراً.','محد','بيعرف.','A:','B:','التعليقات…'];
+var KEY=['خمسين','ألف','ريال.','أبو','فهد.','فصلك','الكل.','مثلك.','أحد','شافك.','ديونك','شكراً.','محد','بيعرف.','A:','B:','التعليقات…'];
 function captions(x,t,y=1600){const L=TIMING.lines.find(l=>t>=l.start-0.05&&t<l.end+0.25);if(!L)return;
  const ws=L.words;const chunks=[];let cur=[];ws.forEach(w=>{cur.push(w);if(cur.length>=4||/[.…:؟،]$/.test(w.w)){chunks.push(cur);cur=[]}});if(cur.length)chunks.push(cur);
  let ch=chunks.find(c=>t<c[c.length-1].e+0.05)||chunks[chunks.length-1];
