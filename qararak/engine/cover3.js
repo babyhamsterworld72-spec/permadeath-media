@@ -1,0 +1,12 @@
+const ME={ghutra:'#F7F4EE',checker:'#d23b3b'};const BOSS={tie:C.red,glasses:true,col:'#ECE6DC'};
+window.__ready=document.fonts.load('900 80px Cairo').then(()=>document.fonts.load('800 80px Cairo')).then(()=>{const x=document.getElementById('c').getContext('2d');
+ x.fillStyle='#160d0b';x.fillRect(0,0,W,H);const g=x.createRadialGradient(540,1000,40,540,1000,1000);g.addColorStop(0,'rgba(255,59,48,.38)');g.addColorStop(1,'rgba(0,0,0,0)');x.fillStyle=g;x.fillRect(0,0,W,H);
+ speedLines(x,540,1050,0.4,.22,'#ff3b30');
+ x.save();x.translate(900,800);x.scale(.36,.36);bigCam(x,0,0,0.06);x.restore();
+ drawStick(x,{...BASE,...BOSS,...P.pointL,aL1:-100,aL2:-95,x:720,y:1330,ground:1560,s:1.45,face:'angry',look:-1},.3);
+ drawStick(x,{...BASE,...ME,...P.shock,x:300,y:1330,ground:1560,s:1.35,face:'shock',sweat:true,look:1},.3);
+ x.save();x.translate(540,320);x.rotate(-.05);x.direction='ltr';x.font='900 170px Cairo';x.textAlign='center';x.textBaseline='middle';x.lineWidth=24;x.strokeStyle=C.ink;x.lineJoin='round';x.strokeText('-10,000',0,0);x.fillStyle=C.gold;x.shadowColor='rgba(255,197,61,.6)';x.shadowBlur=40;x.fillText('-10,000',0,0);x.restore();
+ x.save();x.translate(540,530);x.rotate(.05);pill(x,0,0,760,190,28,C.red);rich(x,[['أنت سارق!',C.paper]],0,8,120,{});x.restore();
+ rich(x,[['بس الكاميرا شافت كل شي…',C.paper]],540,700,62,{stroke:14});
+ pill(x,540,1800,620,100,50,'rgba(0,0,0,.7)');rich(x,[['وش بتسوي؟ ',C.paper],['A',C.a],[' أو ',C.paper],['B',C.b]],540,1804,52,{weight:900});logo(x,880,1800,60);
+ vignette(x,.55);return 1});
