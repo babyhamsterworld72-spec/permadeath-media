@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>روابط قرارك</title>
+<meta name="description" content="كل روابط قناة قرارك: انستقرام، تيك توك، يوتيوب، ومتجر مختارات قرارك من أمازون السعودية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
+<style>
+:root{
+  --bg:#f4f6f8; --card:#ffffff; --ink:#111827; --muted:#5b6472; --line:#e3e7ec;
+  --hero:#111827; --hero-ink:#ffffff; --hero-muted:#c5cad3;
+  --accent:#ff9900; --accent-ink:#111827; --a:#FF5A1F; --b:#22D3EE;
+  --font:"Tajawal","Segoe UI",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f141b; --card:#18202a; --ink:#eef1f5; --muted:#9aa4b2; --line:#26303c;
+  --hero:#18202a; --hero-muted:#aab3c0; --accent:#ffa526; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141b; --card:#18202a; --ink:#eef1f5; --muted:#9aa4b2; --line:#26303c;
+  --hero:#18202a; --hero-muted:#aab3c0; --accent:#ffa526; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.6;margin:0;min-height:100vh}
+.wrap{max-width:520px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-left,0px)) 40px max(16px,env(safe-area-inset-right,0px))}
+h1,h2,p{margin:0}
+a{color:inherit}
+
+.hero{background:var(--hero);color:var(--hero-ink);border-radius:24px;padding:32px 20px 26px;text-align:center;display:grid;gap:10px;justify-items:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(255,153,0,.4) 0%,rgba(255,153,0,0) 70%);inset-inline-end:-120px;top:-170px;pointer-events:none}
+.logo{width:92px;height:92px;border-radius:50%;background:#0E0F12;display:grid;place-items:center;position:relative;z-index:1;box-shadow:0 0 0 4px rgba(255,255,255,.12)}
+.logo span{direction:ltr;font-weight:800;font-size:30px;line-height:1;display:flex;gap:4px}
+.logo .la{color:var(--a)} .logo .lb{color:var(--b)}
+.hero h1{font-weight:800;font-size:28px;position:relative;z-index:1}
+.handle{color:var(--hero-muted);font-size:15px;direction:ltr;position:relative;z-index:1}
+.hero p.bio{color:var(--hero-muted);max-width:34ch;position:relative;z-index:1}
+.time{position:relative;z-index:1;background:rgba(255,255,255,.12);border-radius:999px;padding:3px 14px;font-size:13px;font-weight:500}
+
+.links{display:grid;gap:12px;margin-top:18px}
+.lk{display:flex;align-items:center;gap:14px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;min-height:64px;transition:transform .15s,border-color .15s,box-shadow .15s}
+.lk:hover,.lk:focus-visible{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 12px 28px rgba(17,24,39,.10);outline:none}
+.ic{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;color:#fff}
+.ic svg{width:22px;height:22px}
+.tx{flex:1;min-width:0;display:grid}
+.tx b{font-weight:800;font-size:16px}
+.tx small{color:var(--muted);font-size:13px;overflow-wrap:anywhere}
+.go{flex:none;width:18px;height:18px;color:var(--muted)}
+.lk.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.lk.main .tx small,.lk.main .go{color:rgba(17,24,39,.75)}
+.lk.main .ic{background:#111827}
+.lk.soon{opacity:.6;pointer-events:none}
+.ig{background:linear-gradient(45deg,#f9a825,#e1306c 55%,#833ab4)}
+.tt{background:#000} .yt{background:#ff0000}
+
+.sec{margin-top:26px;display:grid;gap:4px}
+.sec h2{font-weight:800;font-size:19px}
+.sec p{color:var(--muted);font-size:14px}
+.picks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.pk{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px;display:grid;gap:6px;min-width:0;transition:border-color .15s}
+.pk:hover,.pk:focus-visible{border-color:var(--accent);outline:none}
+.pk div{aspect-ratio:1;background:#fff;border-radius:10px;display:grid;place-items:center;padding:8px;overflow:hidden}
+.pk img{width:100%;height:100%;object-fit:contain}
+.pk span{font-size:13px;font-weight:700;line-height:1.4;text-align:center}
+
+footer{margin-top:28px;text-align:center;color:var(--muted);font-size:12px;display:grid;gap:4px}
+</style></head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <div class="logo" aria-hidden="true"><span><i class="la" style="font-style:normal">A</i><i class="lb" style="font-style:normal">B</i></span></div>
+    <h1>قرارك</h1>
+    <div class="handle">@yourmove967</div>
+    <p class="bio">قصص قصيرة بلهجتنا، وفي آخر كل قصة أنت اللي تقرر: A ولا B؟</p>
+    <div class="time">قصة جديدة كل يوم 9 مساءً بتوقيت السعودية</div>
+  </header>
+
+  <nav class="links" id="links" aria-label="روابط قرارك"></nav>
+
+  <section class="sec" aria-labelledby="pk-h">
+    <h2 id="pk-h">من قصصنا</h2>
+    <p>منتجات ظهرت فكرتها في حلقات قرارك، من أمازون السعودية.</p>
+    <div class="picks" id="picks"></div>
+  </section>
+
+  <footer>
+    <div>بصفتي شريكاً في أمازون، أكسب عمولة من عمليات الشراء المؤهلة.</div>
+    <div>© قرارك</div>
+  </footer>
+</main>
+
+<script>
+/* ===== Edit these links ===== */
+// Public address of the store page (landing-for-website.html) once it is hosted.
+// Leave empty "" and the store button shows "قريباً".
+const STORE_URL = "https://babyhamsterworld72-spec.github.io/permadeath-media/";
+const TAG = "yourmove-21"; // Amazon.sa Associates tag
+
+const LINKS = [
+  {cls:"main", icon:"cart", title:"متجر مختارات قرارك", sub:"منتجات القصص من أمازون السعودية", url:STORE_URL},
+  {cls:"ig",   icon:"ig",   title:"انستقرام", sub:"@yourmove967", url:"https://www.instagram.com/yourmove967/"},
+  {cls:"tt",   icon:"tt",   title:"تيك توك",  sub:"@fnzaburyan",  url:"https://www.tiktok.com/@fnzaburyan"},
+  {cls:"yt",   icon:"yt",   title:"يوتيوب",   sub:"@Yourmove96",  url:"https://www.youtube.com/@Yourmove96"}
+];
+const PICKS = [
+  {asin:"B095CLQ1PT", img:"https://m.media-amazon.com/images/I/71y0AzBrw3L._AC_SL1000_.jpg", name:"كاميرا تابو C210"},
+  {asin:"B01M0P5J67", img:"https://m.media-amazon.com/images/I/71AOwusZ5dL._AC_SL1000_.jpg", name:"محفظة هيرشل RFID"},
+  {asin:"9921767003", img:"https://m.media-amazon.com/images/I/61NLSPcLfzL._SL1000_.jpg",    name:"كتاب سيكولوجية المال"}
+];
+/* ============================ */
+
+const ICONS = {
+  cart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 8H6"/></svg>',
+  ig:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
+  tt:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.2 1.8 3.7 4 4v3.1c-1.5 0-2.9-.4-4-1.1v6.4c0 3.4-2.6 5.9-5.9 5.9S4.8 18.8 4.8 15.5c0-3.4 2.9-6 6.4-5.8v3.2c-1.7-.3-3.2.9-3.2 2.6 0 1.5 1.2 2.7 2.7 2.7 1.6 0 2.8-1.2 2.8-2.9V3h3.1z"/></svg>',
+  yt:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.6 2.6 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.6 2.6 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>'
+};
+const GO = '<svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+document.getElementById("links").innerHTML = LINKS.map(l => {
+  const soon = !l.url;
+  return `<a class="lk ${l.cls==="main"?"main":""} ${soon?"soon":""}" ${soon?'aria-disabled="true"':`href="${esc(l.url)}" target="_blank" rel="noopener"`}>
+    <span class="ic ${l.cls==="main"?"":l.cls}">${ICONS[l.icon]}</span>
+    <span class="tx"><b>${esc(l.title)}</b><small ${soon?"":'dir="ltr" style="text-align:right"'}>${soon?"قريباً":esc(l.sub)}</small></span>${GO}</a>`;
+}).join("");
+
+document.getElementById("picks").innerHTML = PICKS.map(p =>
+  `<a class="pk" href="https://www.amazon.sa/dp/${p.asin}?tag=${encodeURIComponent(TAG)}" target="_blank" rel="noopener sponsored">
+    <div><img src="${p.img}" alt="${esc(p.name)}" loading="lazy" referrerpolicy="no-referrer"></div><span>${esc(p.name)}</span></a>`
+).join("");
+</script>
+</body></html>

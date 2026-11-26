@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>مختارات قرارك</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="مختارات قناة قرارك من أمازون السعودية: منتجات من الأكثر مبيعاً تحل مشاكل يومية للسيارة والبيت والصحة والجوال.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;800&family=Tajawal:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: midnight "showroom" hero with a rotating product on a lit stage, then ranked shelves.
+   Every product photo sits on its own square white stage so Amazon's official images show whole and sharp. */
+:root{
+  --bg:#f3f4f7; --card:#ffffff; --ink:#0e1320; --muted:#5a6273; --line:#e2e5ec;
+  --night:#0a0e18; --night-2:#141a2a; --night-ink:#f5f6fa; --night-muted:#a3abbd;
+  --accent:#ff9a1f; --accent-2:#ffc061; --accent-ink:#1a1206;
+  --chip:#eceff4; --chip-ink:#384152; --hot:#fff1db; --hot-ink:#9a5200;
+  --bad:#b42830; --bad-bg:#fdeced; --good:#11785a; --good-bg:#e4f5ee;
+  --stage:#ffffff;
+  --display:"Alexandria","Tajawal",Tahoma,sans-serif;
+  --body:"Tajawal","Segoe UI",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c1019; --card:#151b28; --ink:#eef0f5; --muted:#9ca5b6; --line:#252d3d;
+  --night:#070a12; --night-2:#121828;
+  --chip:#20283a; --chip-ink:#c6ccd8; --hot:#3a2a10; --hot-ink:#ffc56e;
+  --bad:#ff8d92; --bad-bg:#3a1b20; --good:#62d6a8; --good-bg:#132f28; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c1019; --card:#151b28; --ink:#eef0f5; --muted:#9ca5b6; --line:#252d3d;
+  --night:#070a12; --night-2:#121828;
+  --chip:#20283a; --chip-ink:#c6ccd8; --hot:#3a2a10; --hot-ink:#ffc56e;
+  --bad:#ff8d92; --bad-bg:#3a1b20; --good:#62d6a8; --good-bg:#132f28; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,p{margin:0} h1,h2,h3{text-wrap:balance;font-family:var(--display)}
+a{color:inherit}
+img{display:block}
+
+/* ---------- hero ---------- */
+.hero{margin-top:16px;border-radius:28px;background:radial-gradient(120% 90% at 85% 0%,#1d2540 0%,var(--night) 60%);color:var(--night-ink);position:relative;overflow:hidden;isolation:isolate}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(180deg,#000 0%,transparent 80%);-webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 80%);z-index:-1}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:32px;align-items:center;padding:48px clamp(20px,5vw,60px) 40px}
+.hero-text{display:grid;gap:16px;min-width:0}
+.kick{justify-self:start;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:5px 14px;font-size:13px;font-weight:500;color:var(--night-muted)}
+.kick i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(255,154,31,.25)}
+.hero h1{font-weight:800;font-size:clamp(32px,5.4vw,58px);line-height:1.18;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{color:var(--night-muted);max-width:46ch;font-size:18px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(180deg,var(--accent-2),var(--accent));color:var(--accent-ink);font-weight:800;text-decoration:none;border-radius:14px;padding:14px 26px;box-shadow:0 10px 30px rgba(255,154,31,.3);transition:transform .15s,box-shadow .15s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(255,154,31,.4)}
+.cta.ghost{background:transparent;color:var(--night-ink);border:1px solid rgba(255,255,255,.25);box-shadow:none}
+.cta.ghost:hover{border-color:var(--accent)}
+.cta:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+/* stage carousel */
+.stage{position:relative;min-width:0}
+.stage-card{position:relative;background:var(--stage);border-radius:24px;aspect-ratio:1/1;max-width:440px;margin-inline:auto;box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06);overflow:hidden}
+.stage-card::before{content:"";position:absolute;inset:auto 10% 6% 10%;height:18%;background:radial-gradient(50% 50% at 50% 50%,rgba(14,19,32,.13),transparent 70%);z-index:0}
+.slide{position:absolute;inset:0;display:grid;place-items:center;padding:8%;opacity:0;transform:scale(.96);transition:opacity .6s ease,transform .6s ease;text-decoration:none}
+.slide.on{opacity:1;transform:none;z-index:1}
+.slide img{width:100%;height:100%;object-fit:contain;position:relative}
+.stage-info{max-width:440px;margin:16px auto 0;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
+.stage-name{font-weight:700;font-size:16px;min-width:0}
+.stage-name small{display:block;color:var(--night-muted);font-weight:500;font-size:13px}
+.dots{display:flex;gap:6px;flex:none}
+.dots button{width:9px;height:9px;padding:0;border:0;border-radius:999px;background:rgba(255,255,255,.28);cursor:pointer;transition:width .3s,background .3s}
+.dots button[aria-pressed="true"]{width:26px;background:var(--accent)}
+.dots button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.badge-float{position:absolute;top:14px;inset-inline-start:14px;z-index:2;background:var(--night);color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:4px 12px}
+
+/* ticker */
+.ticker{border-top:1px solid rgba(255,255,255,.08);overflow:hidden;padding-block:14px;white-space:nowrap;direction:ltr}
+.ticker-track{display:inline-flex;gap:36px;animation:tick 38s linear infinite;padding-inline-start:36px}
+.ticker span{direction:rtl;color:var(--night-muted);font-size:15px;font-weight:500}
+.ticker span b{color:var(--accent-2);font-weight:700}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media (max-width:820px){.hero-in{grid-template-columns:minmax(0,1fr);padding-top:28px}.stage{order:-1}.stage-card{max-width:340px}.stage-info{max-width:340px}}
+
+/* ---------- section heads ---------- */
+.head{display:grid;gap:6px;margin-top:48px}
+.eyebrow{font-size:13px;font-weight:700;color:var(--hot-ink);letter-spacing:.02em}
+.head h2{font-weight:800;font-size:clamp(24px,3.6vw,34px);line-height:1.3}
+.head p{color:var(--muted);max-width:64ch}
+
+/* ---------- featured ---------- */
+.feat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
+@media (max-width:980px){.feat{grid-template-columns:minmax(0,1fr)}}
+.fcard{position:relative;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:14px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:transform .25s,box-shadow .25s,border-color .25s}
+.fcard:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(14,19,32,.14);border-color:transparent}
+.fcard:first-child{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+@media (min-width:981px){.fcard:first-child{transform:translateY(-8px)}.fcard:first-child:hover{transform:translateY(-12px)}}
+.rank{position:absolute;top:24px;inset-inline-start:24px;z-index:3;font-family:var(--display);font-weight:800;font-size:13px;background:var(--night);color:#fff;border-radius:10px;padding:4px 10px;font-variant-numeric:tabular-nums}
+.fcard:first-child .rank{background:var(--accent);color:var(--accent-ink)}
+.fbody{display:flex;flex-direction:column;gap:10px;padding:4px 6px 6px;flex:1}
+.ps{display:grid;gap:6px;font-size:14px}
+.ps span{border-radius:10px;padding:8px 12px;line-height:1.55}
+.ps .p{background:var(--bad-bg);color:var(--bad)}
+.ps .s{background:var(--good-bg);color:var(--good)}
+.ps b{font-weight:800;margin-inline-end:4px}
+
+/* ---------- photo stage (shared) ---------- */
+.gal{display:grid;gap:8px;min-width:0}
+.pic{position:relative;display:block;aspect-ratio:1/1;background:var(--stage);border-radius:16px;overflow:hidden;max-width:100%}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:6%;transition:opacity .25s}
+.thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.thumbs button{position:relative;aspect-ratio:1/1;padding:0;background:var(--stage);border:2px solid var(--line);border-radius:10px;cursor:pointer;overflow:hidden;min-width:0;transition:border-color .15s}
+.thumbs button img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8%}
+.thumbs button[aria-pressed="true"]{border-color:var(--accent)}
+.thumbs button:hover,.thumbs button:focus-visible{border-color:var(--accent);outline:none}
+
+/* ---------- filter ---------- */
+.filter{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--bg);padding-block:12px;margin-top:16px;border-bottom:1px solid transparent;transition:border-color .2s}
+.filter.stuck{border-bottom-color:var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.filter-in{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-block:2px}
+.filter-in::-webkit-scrollbar{display:none}
+.chip{flex:none;font:inherit;font-weight:700;font-size:15px;cursor:pointer;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 18px;transition:border-color .15s,background .15s,color .15s}
+.chip small{font-weight:500;color:var(--muted);margin-inline-start:4px;font-variant-numeric:tabular-nums}
+.chip:hover,.chip:focus-visible{border-color:var(--accent);outline:none}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip[aria-pressed="true"] small{color:inherit;opacity:.7}
+
+/* ---------- grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-top:20px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:12px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(14,19,32,.13);border-color:transparent}
+.card .rank{top:20px;inset-inline-start:20px}
+.cbody{display:flex;flex-direction:column;gap:8px;padding:2px 4px 4px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;font-weight:700;background:var(--chip);color:var(--chip-ink);border-radius:6px;padding:2px 8px}
+.tag.hot{background:var(--hot);color:var(--hot-ink)}
+.card h3,.fcard h3{font-family:var(--body);font-weight:800;font-size:17px;line-height:1.45}
+.fcard h3{font-size:19px}
+.hook{font-size:14px;font-weight:600;border-inline-start:3px solid var(--accent);padding-inline-start:8px}
+.why{color:var(--muted);font-size:14px;flex:1}
+.btn{display:flex;justify-content:center;align-items:center;gap:8px;text-decoration:none;font-weight:800;background:linear-gradient(180deg,var(--accent-2),var(--accent));color:var(--accent-ink);border-radius:12px;padding:12px;margin-top:2px;transition:filter .15s,transform .15s}
+.btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .15s}
+.btn:hover svg{transform:translateX(-3px)}
+
+/* ---------- trust / how / faq ---------- */
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:20px}
+.trust div{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
+.trust svg{grid-row:span 2;width:36px;height:36px;padding:7px;border-radius:10px;background:var(--hot);color:var(--hot-ink);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.trust b{font-size:16px}.trust span{color:var(--muted);font-size:14px}
+.faq{display:grid;gap:10px;margin-top:20px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:20px;line-height:1;color:var(--accent);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin-top:8px;font-size:15px}
+.closing{margin-top:56px;border-radius:24px;background:var(--night);color:var(--night-ink);padding:36px clamp(20px,5vw,56px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.closing h2{font-size:clamp(22px,3.4vw,32px);font-weight:800}
+.closing p{color:var(--night-muted);margin-top:6px}
+footer{color:var(--muted);font-size:13px;padding-block:28px 48px;display:grid;gap:6px}
+footer a{color:var(--ink);font-weight:700}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+
+</head><body>
+<div class="wrap" dir="rtl" lang="ar">
+  <header class="hero">
+    <div class="hero-in">
+      <div class="hero-text">
+        <span class="kick"><i></i>مختارات قرارك من أمازون السعودية</span>
+        <h1>مو أي منتجات.<br><em>منتجات تحل مشكلة.</em></h1>
+        <p class="lead">فرزنا آلاف المنتجات في قوائم الأكثر مبيعاً، وطلعنا لك اللي يستاهل فعلاً: تقييم عالي، طلب كبير، وحل لمشكلة تواجهها كل يوم.</p>
+        <div class="actions">
+          <a class="cta" href="#top-picks">شوف الأفضل ٣</a>
+          <a class="cta ghost" href="#all">تصفّح كل المختارات</a>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="stage-card" id="stage"><span class="badge-float">الأكثر طلباً الآن</span></div>
+        <div class="stage-info"><div class="stage-name" id="stage-name"></div><div class="dots" id="dots" aria-label="المنتجات المعروضة"></div></div>
+      </div>
+    </div>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+  </header>
+
+  <section id="top-picks">
+    <div class="head"><div class="eyebrow">الأفضل ٣</div><h2>لو بتشتري شي واحد، ابدأ من هنا</h2><p>أعلى المنتجات طلباً وتقييماً، وكل واحد منها يحل مشكلة يعرفها الكل.</p></div>
+    <div class="feat" id="feat"></div>
+  </section>
+
+  <div class="filter" id="all"><nav class="filter-in" id="chips" aria-label="تصفية حسب القسم"></nav></div>
+  <div class="head" style="margin-top:12px"><div class="eyebrow" id="grid-eyebrow">مرتبة حسب الأهمية</div><h2 id="grid-title">كل المختارات</h2><p id="grid-note">رتبناها من الأقوى للأقل. اختر القسم اللي يهمك من فوق.</p></div>
+  <div class="grid" id="grid"></div>
+
+  <section>
+    <div class="head"><div class="eyebrow">ليش تطلب من هنا؟</div><h2>نفس أمازون، بس مختار لك</h2></div>
+    <div class="trust">
+      <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><b>شحن من أمازون السعودية</b><span>الطلب والدفع والتوصيل كلها داخل أمازون.</span></div>
+      <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg><b>إرجاع سهل</b><span>تنطبق سياسة الإرجاع الخاصة بأمازون على كل منتج.</span></div>
+      <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg><b>نفس السعر بالضبط</b><span>ما تدفع ريال زيادة، وأمازون هي اللي تعطينا العمولة.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><div class="eyebrow">أسئلة متكررة</div><h2>قبل ما تطلب</h2></div>
+    <div class="faq">
+      <details><summary>هل السعر يزيد لو طلبت من هنا؟</summary><p>لا. السعر نفسه اللي في أمازون، ونحن ناخذ عمولة صغيرة من أمازون بدون أي تكلفة عليك.</p></details>
+      <details><summary>ليش ما فيه أسعار في الصفحة؟</summary><p>لأن أسعار أمازون تتغير كل يوم وفيها عروض كثير، فنخليك تشوف السعر الحقيقي لحظة الطلب.</p></details>
+      <details><summary>كيف اخترتوا المنتجات؟</summary><p>من قوائم الأكثر مبيعاً في أمازون السعودية، واخترنا منها اللي تقييمه عالي وعليه طلب كبير ويحل مشكلة واضحة.</p></details>
+    </div>
+  </section>
+
+  <div class="closing">
+    <div><h2>جاهز تختار؟</h2><p>ابدأ بالأكثر طلباً، وإذا عجبك المنتج شاركه مع أحد يحتاجه.</p></div>
+    <a class="cta" href="#top-picks">ارجع للأفضل ٣</a>
+  </div>
+
+  <footer>
+    <div>بصفتي شريكاً في برنامج أمازون للشركاء، أكسب عمولة من عمليات الشراء المؤهلة بدون أي تكلفة إضافية عليك.</div>
+    <div>الأسعار والتوفر تتغير باستمرار، والسعر النهائي هو المعروض في أمازون وقت الشراء.</div>
+    <div>تابعنا على انستقرام: <a href="https://www.instagram.com/yourmove967/" target="_blank" rel="noopener">@yourmove967</a></div>
+  </footer>
+</div>
+
+<script>
+/* رمز الشريك في أمازون السعودية */
+const TAG = "yourmove-21";
+
+const CATS = [
+ {id:"all",label:"الكل",title:"كل المختارات",note:"رتبناها من الأقوى للأقل. اختر القسم اللي يهمك من فوق."},
+ {id:"car",label:"سيارتك",title:"لسيارتك",note:"أشياء تنقذك في الطريق، خصوصاً في البر والسفر."},
+ {id:"health",label:"صحتك وراحتك",title:"لصحتك وراحتك",note:"للحر والتعب وصحة الأسنان."},
+ {id:"tech",label:"جوالك وأجهزتك",title:"لجوالك وأجهزتك",note:"من الأكثر مبيعاً عند الشباب."},
+ {id:"home",label:"بيتك",title:"لبيتك",note:"ملابس ترجع مثل الجديدة، ومساحة أكثر وفوضى أقل."},
+ {id:"story",label:"من قصصنا",title:"من قصص القناة",note:"الكاميرا اللي كشفت الحقيقة والمحفظة اللي ضاعت."},
+ {id:"books",label:"كتب",title:"كتب القرار",note:"قبل ما تقرر، اقرأ."}
+];
+
+/* ordered by importance; the first three are the featured picks */
+const P = [
+ {asin:"B0BZP6HCVS",cat:"car",feat:1,short:"جهاز تشغيل السيارة",name:"جهاز تشغيل السيارة المحمول من استرو AstroAI",tags:["الأكثر مبيعاً","لكل السيارات"],
+  problem:"البطارية فصلت وأنت لحالك في البر أو المواقف.",solution:"تشغّل السيارة بنفسك بدون كيابل ولا سيارة ثانية.",
+  why:"من أكثر أدوات السيارات مبيعاً في السعودية، ويشتغل كمان باور بانك للجوال."},
+ {asin:"B07M8J529S",cat:"home",feat:1,short:"مزيل الوبر من فيليبس",name:"مزيل الوبر من فيليبس GC026",tags:["الأكثر مبيعاً","يعمل بالبطارية"],
+  problem:"ملابسك وكنبك صار فيها كرات وبر وشكلها قديم.",solution:"يمسح الوبر بدقيقة ويرجع القماش مثل الجديد.",
+  why:"من أعلى المنتجات تقييماً في أمازون كله. رخيص ويوفر عليك شراء ملابس جديدة."},
+ {asin:"B088ZN47V8",cat:"health",feat:1,short:"مروحة الرقبة",name:"مروحة رقبة محمولة من جيسولايف",tags:["الأكثر مبيعاً","بدون شفرات"],
+  problem:"الحر ما يرحم، في الطابور والسوق والملاعب.",solution:"تلبسها على رقبتك وتبرّدك بدون ما تشيلها بيدك.",
+  why:"خفيفة وهادئة وتشحن بـ USB. من أكثر المراوح المحمولة مبيعاً."},
+ {asin:"B08HMWZBXC",cat:"tech",short:"سماعة أنكر Q30",name:"سماعة أنكر ساوندكور Life Q30",tags:["الأكثر مبيعاً","عزل الضوضاء"],
+  hook:"الإزعاج حولك ما يخليك تركز؟",why:"عزل ضوضاء قوي بسعر معقول وبطارية تكفي أيام."},
+ {asin:"B0C2H652ZJ",cat:"car",name:"منفاخ إطارات رقمي من استرو AstroAI",tags:["الأكثر مبيعاً","يوقف تلقائياً"],
+  hook:"كفر ناقص هواء في نص الطريق؟",why:"تحدد الضغط المطلوب ويوقف لحاله. يشتغل من ولاعة السيارة."},
+ {asin:"B0DSVZBPBQ",cat:"health",name:"جهاز تنظيف الأسنان بالماء كوسلوس C20",tags:["الأكثر مبيعاً","لاسلكي"],
+  hook:"نزيف لثة أو تقويم صعب تنظفه؟",why:"ينظف بين الأسنان أحسن من الخيط العادي، ومناسب جداً للتقويم."},
+ {asin:"B0FT3BW4TM",cat:"health",name:"مسدس تدليك العضلات من آيرلانج مع حرارة",tags:["تقييم عالٍ","حرارة وسرعات"],
+  hook:"ظهرك ورقبتك تعبانين من الدوام؟",why:"يفك شد العضلات بعد الجيم أو الجلوس الطويل، ومعه رؤوس متعددة."},
+ {asin:"B0C6XK77HJ",cat:"tech",name:"باور بانك أنكر نانو بمنفذ USB-C مدمج",tags:["الأكثر مبيعاً","بحجم الكف"],
+  hook:"جوالك يطفي قبل نهاية اليوم؟",why:"صغير جداً ويركب في الجوال مباشرة بدون كيبل."},
+ {asin:"B0DDL8WGH5",cat:"tech",name:"ميكروفون DJI Mic Mini لاسلكي",tags:["لصناع المحتوى","خفيف جداً"],
+  hook:"صوت فيديوهاتك ضعيف؟",why:"صوت واضح من الجوال أو الكاميرا. مناسب لكل من يبي يبدأ قناته."},
+ {asin:"B0D2Q5M35Y",cat:"car",name:"حامل جوال مغناطيسي للسيارة من يوجرين",tags:["تقييم عالٍ جداً","صغير"],
+  hook:"الجوال يطيح وأنت تسوق؟",why:"يثبت على فتحة المكيف ويمسك الجوال بقوة، والخريطة دايماً قدامك."},
+ {asin:"B095CLQ1PT",cat:"story",name:"كاميرا مراقبة تابو C210 من تي بي لينك",tags:["الأكثر مبيعاً","رؤية ليلية"],
+  hook:"أنت مسافر والباب انفتح... وش بتسوي؟",why:"تشوف بيتك من جوالك وتنبهك إذا تحرك شي. سهلة التركيب."},
+ {asin:"B07CGNP3RH",cat:"tech",name:"ماوس الألعاب لوجيتك G305 لاسلكي",tags:["للقيمرز","لاسلكي"],
+  hook:"الماوس يعلّق في اللحظة الحاسمة؟",why:"خفيف وسريع الاستجابة، من الأكثر مبيعاً في قسم الألعاب."},
+ {asin:"B09GTM8FHN",cat:"story",name:"حامل AirTag للمحفظة من Elevation Lab",tags:["ضد الضياع","بحجم البطاقة"],
+  hook:"محفظتك ما راح تضيع مرة ثانية.",why:"تحطه داخل المحفظة مثل البطاقة وتعرف مكانها من جوالك (جهاز AirTag يُشترى منفصلاً)."},
+ {asin:"B01M0P5J67",cat:"story",name:"محفظة هيرشل بحماية RFID",tags:["تقييم عالٍ جداً","نحيفة"],
+  hook:"بطاقاتك في أمان حتى لو أحد وقف جنبك.",why:"محفظة صغيرة وعملية تحمي بطاقاتك من المسح اللاسلكي."},
+ {asin:"9921767003",cat:"books",name:"كتاب سيكولوجية المال (بالعربي)",tags:["بالعربي","مال وقرارات"],
+  hook:"أغلب قراراتنا المالية ما تكون بالعقل.",why:"كيف تأثر مشاعرنا على قراراتنا المالية، بأسلوب قصصي سهل."},
+ {asin:"1847941494",cat:"books",name:"Never Split the Difference (فن التفاوض)",tags:["بالإنجليزي","تقييم عالٍ جداً"],
+  hook:"لو المدير اتهمك ظلماً... كيف تتكلم؟",why:"مفاوض سابق في الـFBI يشرح كيف تقنع وتتفاوض في أصعب المواقف."},
+ {asin:"B07RTJV6G4",cat:"home",name:"أكياس تفريغ الهواء من أمازون بيسيكس (5 أكياس)",tags:["الأكثر مبيعاً","توفر المساحة"],
+  hook:"الدولاب ما يكفي وبطانيات الشتاء مالية المكان؟",why:"تضغط الملابس والبطانيات لربع حجمها بمضخة يدوية. مثالية للسفر وتبديل المواسم."},
+ {asin:"B08KXKVT4K",cat:"home",name:"منظمات أدراج شفافة من فيتوبمارت",tags:["تقييم عالٍ جداً","قطع متعددة"],
+  hook:"الأدراج فوضى وما تلقى شي؟",why:"قطع بأحجام مختلفة لأدراج المطبخ والمكياج والمكتب."}
+];
+const SPOT = ["B0BZP6HCVS","B07M8J529S","B088ZN47V8","B08HMWZBXC"];
+const TICK = ["<b>جهاز تشغيل السيارة</b> للي بطاريته تفصل","<b>مزيل الوبر</b> لملابس ترجع جديدة","<b>مروحة الرقبة</b> لحر الصيف","<b>منفاخ الإطارات</b> للبر والسفر","<b>سماعة عزل الضوضاء</b> للتركيز","<b>مسدس التدليك</b> بعد الدوام","<b>جهاز الأسنان بالماء</b> للتقويم"];
+
+const IMG = {"1847941494": ["https://m.media-amazon.com/images/I/714oS6pL92L._SL1000_.jpg"], "9921767003": ["https://m.media-amazon.com/images/I/61NLSPcLfzL._SL1000_.jpg", "https://m.media-amazon.com/images/I/61yj8XPc-tL._SL1000_.jpg"], "B01M0P5J67": ["https://m.media-amazon.com/images/I/71AOwusZ5dL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/710FpS3elkL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/81PIwYNQ2XL._AC_SL1000_.jpg"], "B07CGNP3RH": ["https://m.media-amazon.com/images/I/51rLVBwEGFL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/61wT6wNKTbL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71KEiIga8sL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71545R80tQL._AC_SL1000_.jpg"], "B07M8J529S": ["https://m.media-amazon.com/images/I/5109I5lTTyL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/712do3wbgxL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/61+mhU02RML._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/710JEo45udL._AC_SL1000_.jpg"], "B07RTJV6G4": ["https://m.media-amazon.com/images/I/71qEqnkZg8L._AC_SL1000_.jpg"], "B088ZN47V8": ["https://m.media-amazon.com/images/I/517OVWxc02L._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71htmJiiO-L._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71fEbaD9lwL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/716O0WE4ShL._AC_SL1000_.jpg"], "B08HMWZBXC": ["https://m.media-amazon.com/images/I/61K3Y0MZMpL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/713oD3dPcoL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71Y67ARLYDL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/61M7ucpxtoL._AC_SL1000_.jpg"], "B08KXKVT4K": ["https://m.media-amazon.com/images/I/81GxKjOKfeL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71cDtCW3XrL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71QVFOcs0EL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71kO9WvwRLL._AC_SL1000_.jpg"], "B095CLQ1PT": ["https://m.media-amazon.com/images/I/71y0AzBrw3L._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71yvyGHLOhL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71Ej+fQRyUL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71XUx6GnkUL._AC_SL1000_.jpg"], "B09GTM8FHN": ["https://m.media-amazon.com/images/I/51hdlvYaQkL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71bHsMVgLdL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71nbM39QNkL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71CgWw3lMXL._AC_SL1000_.jpg"], "B0BZP6HCVS": ["https://m.media-amazon.com/images/I/71ANpsaRohL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/819KRS1C88L._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/713Mq76NNyL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/81E3b8UMVnL._AC_SL1000_.jpg"], "B0C2H652ZJ": ["https://m.media-amazon.com/images/I/71eXxpvTPYL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/81G3mOSwCHL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71a0vnrLR4L._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/91YSEIe96bL._AC_SL1000_.jpg"], "B0C6XK77HJ": ["https://m.media-amazon.com/images/I/51WSCAMGmHL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/61XXXhYdLCL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/61CXPzK1y9L._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/61uXCv2+QZL._AC_SL1000_.jpg"], "B0D2Q5M35Y": ["https://m.media-amazon.com/images/I/71KX83hxKoL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/7168Sti6+fL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71pBj2M-CXL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71mxsSDmpUL._AC_SL1000_.jpg"], "B0DDL8WGH5": ["https://m.media-amazon.com/images/I/6132m-fHnjL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71UMLU8YVtL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71PoP9ko99L._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71KVKsWm2ZL._AC_SL1000_.jpg"], "B0DSVZBPBQ": ["https://m.media-amazon.com/images/I/71-A5NMd6OL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71Xrj0LYocL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71Iln5YISoL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/61X6oa8vxfL._AC_SL1000_.jpg"], "B0FT3BW4TM": ["https://m.media-amazon.com/images/I/61Xgo1uzgpL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71D4BQ3PCNL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/617it0bZdHL._AC_SL1000_.jpg", "https://m.media-amazon.com/images/I/71W8S6lSFnL._AC_SL1000_.jpg"]};
+const HOT = new Set(["الأكثر مبيعاً","تقييم عالٍ جداً"]);
+const ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>';
+const link = a => "https://www.amazon.sa/dp/"+a+"?tag="+encodeURIComponent(TAG);
+const esc = s => s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const byAsin = Object.fromEntries(P.map((p,i)=>[p.asin,Object.assign(p,{rank:i+1})]));
+const ext = 'target="_blank" rel="noopener sponsored nofollow"';
+const tags = p => `<div class="tags">${p.tags.map(t=>`<span class="tag${HOT.has(t)?" hot":""}">${esc(t)}</span>`).join("")}</div>`;
+const btn = p => `<a class="btn" href="${link(p.asin)}" ${ext}>شوف السعر في أمازون ${ARROW}</a>`;
+const rank = p => `<span class="rank">#${p.rank}</span>`;
+function gallery(p){
+ const im = IMG[p.asin];
+ const main = `<a class="pic" href="${link(p.asin)}" ${ext} tabindex="-1"><img src="${im[0]}" alt="${esc(p.name)}" loading="lazy" decoding="async"></a>`;
+ if (im.length < 2) return `<div class="gal">${main}</div>`;
+ return `<div class="gal">${main}<div class="thumbs">${im.map((u,i)=>`<button type="button" data-i="${i}" aria-pressed="${i===0}" aria-label="صورة ${i+1} من ${im.length}"><img src="${u}" alt="" loading="lazy" decoding="async"></button>`).join("")}</div></div>`;
+}
+
+/* hero stage */
+const stage = document.getElementById("stage"), dots = document.getElementById("dots"), sname = document.getElementById("stage-name");
+stage.insertAdjacentHTML("beforeend", SPOT.map((a,i)=>`<a class="slide${i?"":" on"}" href="${link(a)}" ${ext} aria-label="${esc(byAsin[a].name)}"><img src="${IMG[a][0]}" alt=""></a>`).join(""));
+dots.innerHTML = SPOT.map((a,i)=>`<button type="button" aria-pressed="${i===0}" aria-label="${esc(byAsin[a].short||byAsin[a].name)}"></button>`).join("");
+let cur = 0, timer = null;
+const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+function go(i){
+ cur = (i+SPOT.length)%SPOT.length;
+ stage.querySelectorAll(".slide").forEach((s,k)=>s.classList.toggle("on",k===cur));
+ dots.querySelectorAll("button").forEach((d,k)=>d.setAttribute("aria-pressed",k===cur));
+ const p = byAsin[SPOT[cur]];
+ sname.innerHTML = `${esc(p.short||p.name)}<small>${esc(p.problem||p.hook)}</small>`;
+}
+function play(){ if(!reduce){ clearInterval(timer); timer = setInterval(()=>go(cur+1), 3600);} }
+dots.querySelectorAll("button").forEach((d,k)=>d.addEventListener("click",()=>{go(k);play();}));
+stage.addEventListener("mouseenter",()=>clearInterval(timer));
+stage.addEventListener("mouseleave",play);
+go(0); play();
+
+/* ticker (doubled for a seamless loop) */
+const t = TICK.map(x=>`<span>${x}</span>`).join("");
+document.getElementById("ticker").innerHTML = t + t;
+
+/* featured */
+document.getElementById("feat").innerHTML = P.filter(p=>p.feat).map(p=>`
+ <article class="fcard">${rank(p)}${gallery(p)}
+  <div class="fbody">${tags(p)}<h3>${esc(p.name)}</h3>
+   <div class="ps"><span class="p"><b>المشكلة:</b>${esc(p.problem)}</span><span class="s"><b>الحل:</b>${esc(p.solution)}</span></div>
+   <p class="why">${esc(p.why)}</p>${btn(p)}</div>
+ </article>`).join("");
+
+/* grid + filter */
+const card = p => `<article class="card">${rank(p)}${gallery(p)}<div class="cbody">${tags(p)}<h3>${esc(p.name)}</h3><p class="hook">${esc(p.hook||p.problem)}</p><p class="why">${esc(p.why)}</p>${btn(p)}</div></article>`;
+function show(id){
+ const c = CATS.find(x=>x.id===id) || CATS[0];
+ const list = id==="all" ? P.filter(p=>!p.feat) : P.filter(p=>p.cat===id);
+ document.getElementById("grid").innerHTML = list.map(card).join("");
+ document.getElementById("grid-title").textContent = c.title;
+ document.getElementById("grid-note").textContent = c.note;
+ document.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed", b.dataset.id===id));
+}
+const count = id => id==="all" ? P.length : P.filter(p=>p.cat===id).length;
+document.getElementById("chips").innerHTML = CATS.map(c=>`<button type="button" class="chip" data-id="${c.id}" aria-pressed="false">${c.label}<small>${count(c.id)}</small></button>`).join("");
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{
+ show(b.dataset.id);
+ const f = document.getElementById("all"); if (f.getBoundingClientRect().top < 0) f.scrollIntoView({block:"start"});
+}));
+show("all");
+
+/* gallery thumbnails */
+document.addEventListener("click", e => {
+ const b = e.target.closest(".thumbs button"); if (!b) return;
+ const g = b.closest(".gal"), img = g.querySelector(".pic img"), p = byAsin[g.closest("article").querySelector(".pic").href.match(/dp\/(\w+)/)[1]];
+ img.style.opacity = .2;
+ setTimeout(()=>{ img.src = IMG[p.asin][+b.dataset.i]; img.style.opacity = 1; }, 120);
+ g.querySelectorAll(".thumbs button").forEach(x => x.setAttribute("aria-pressed", x === b));
+});
+
+/* border under the sticky filter once it sticks */
+const filt = document.getElementById("all");
+addEventListener("scroll", () => filt.classList.toggle("stuck", filt.getBoundingClientRect().top <= 1), {passive:true});
+</script>
+
+</body></html>
