@@ -1,0 +1,60 @@
+<title>ردود طلع صادق</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Tajawal:wght@800&display=swap">
+<style>
+/* layout: single mobile column, sticky category chips, tap-to-copy rows */
+:root{--bg:#F3F4F8;--card:#FFFFFF;--fg:#1B1E2B;--muted:#6A6F85;--line:#E1E3EC;--accent:#F2A900;--accentfg:#1B1E2B;--ok:#1F9D55;--okbg:#E5F6EC;
+--display:"Tajawal","IBM Plex Sans Arabic",system-ui,sans-serif;--body:"IBM Plex Sans Arabic",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10121A;--card:#1A1D29;--fg:#ECEDF3;--muted:#9A9FB5;--line:#2A2E3E;--accent:#F5B82E;--accentfg:#10121A;--ok:#4ADE80;--okbg:#14301F;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10121A;--card:#1A1D29;--fg:#ECEDF3;--muted:#9A9FB5;--line:#2A2E3E;--accent:#F5B82E;--accentfg:#10121A;--ok:#4ADE80;--okbg:#14301F;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;direction:rtl}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+h1{font-family:var(--display);font-size:1.9rem;margin:0 0 4px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 14px;line-height:1.6}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding-block:8px;z-index:5;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.bar a{flex:none;text-decoration:none;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.85rem;white-space:nowrap}
+.prog{font-size:.85rem;color:var(--muted);margin:6px 0 0;font-variant-numeric:tabular-nums}
+.prog button{font:inherit;color:var(--muted);background:none;border:0;text-decoration:underline;cursor:pointer;padding:0 6px}
+section{margin-top:22px;scroll-margin-top:60px}
+h2{font-family:var(--display);font-size:1.15rem;margin:0 0 10px;display:flex;gap:8px;align-items:center}
+h2 span{font-family:var(--body);font-size:.8rem;color:var(--muted);font-weight:400}
+ol{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+li{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+li .n{color:var(--muted);font-size:.8rem;min-width:2.2em;font-variant-numeric:tabular-nums}
+li p{margin:0;flex:1;min-width:0;line-height:1.6;user-select:all}
+li button{flex:none;font:600 .85rem var(--body);background:var(--accent);color:var(--accentfg);border:0;border-radius:8px;padding:8px 14px;cursor:pointer}
+li button:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+li.done{background:var(--okbg)}
+li.done button{background:var(--ok);color:var(--card)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:8px 16px;border-radius:999px;font-size:.9rem;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+</style>
+<div class="wrap">
+<h1>ردود «طلع صادق!»</h1>
+<p class="sub">100 رد لريل «طلع صادق!» (الحوالة الجزء الثاني)، مقسومة بين A و B لأن التصويت متوقع ينقسم. اضغط «نسخ» والصقه كرد. الرد اللي نسخته يصير أخضر عشان ما تكرره. وزّع الردود بهدوء، رد كل دقيقة تقريباً، عشان إنستقرام ما يوقف ردودك.</p>
+<nav class="bar" id="bar"></nav>
+<p class="prog" id="prog"></p>
+<div id="list"></div>
+</div>
+<div class="toast" id="toast">تم النسخ ✅</div>
+<script>
+const DATA=[{"id": "a", "title": "اختاروا A: يحوّل من جيبه الحين", "items": ["قلب ذهب 🤍 الله يجزاك خير", "هذي الشهامة اللي نعرفها 👏", "فلوسك ترجع بس العملية ما تنتظر 🙏", "الله يكتب أجرك 🤲", "الرجّال طلع صادق، والفزعة واجبة 💯", "عشرة أيام تمر، بس الأم ما تنتظر 🏥", "كذا يكون الإنسان 🤍", "والله إنك رجّال 👏", "البنك بيرجّعها لك إن شاء الله، والأجر لك 🤲", "قرار يحتاج قلب كبير ❤️", "تخيّل لو كانت أمك 🥺 A بدون تفكير", "الخير يرجع لصاحبه 🌿", "موقف ما ينسى أبد 🙏", "هذا اللي يسوّيه ولد الأصول 👌", "الفلوس تتعوض 💸 الأرواح لا", "فزعة على أصولها 🔥", "الله يبارك فيك وفي رزقك 🤲", "كثير اختاروا A وهذا يفرّح 🤍", "قرار شجاع 💪 بس تأكد إن البنك وثّق كل شي", "A وأنت مرتاح، البنك أكد إنه صادق ✅", "ما بعد التأكيد إلا الفزعة 👏", "هذا الفرق بين العقل والقلب… وأنت جمعتهم 🧠❤️", "أجر عملية أم 🤍 ما فيه أعظم منه", "والله إنها تستاهل 🙏", "لو كل الناس مثلك 🌍❤️", "القلب الأبيض ما يضيع 🤍", "يعني تتحمّل عشرة أيام بس تنقذ عمر؟ يستاهل 💯", "رجولة 👏👏", "والله ما خاب ظني فيكم 🔥", "A ونتوكل على الله 🤲", "تسلم يدك 🙏", "هالقرار يرفع الراس 👑", "الحين البنك أكد، ما عاد فيه شك ✅ A", "نيتك الطيبة تحميك 🤍", "أصيل 💯", "الله يشفي أمه ويحفظ أمك 🤲", "A لأن الوقت هو اللي يفرق هنا ⏳", "خلّها تمر عشرة أيام وأنت مرتاح الضمير 😌", "قلبك كبير يا وحش 🤍", "والله إنك قدوة 👏"]}, {"id": "b", "title": "اختاروا B: يلتزم بالبنك", "items": ["عقلك صاحي 🧠👏", "النظام نظام 🏦 وعشرة أيام تمر", "مو مسؤوليتك صح، بس تقدر تساعده بطريقة ثانية 🤔", "صح، لا تحمّل نفسك فوق طاقتك 💯", "الحذر واجب حتى بعد التأكيد 👌", "تخيّل تحوّل والبنك يتأخر شهر 😬", "B قرار منطقي 100% 🏦", "أنت ما غلطت، البنك هو اللي يتصرف 👍", "المستشفيات لها حلول، مو لازم من جيبك 🏥", "مو كل أحد يقدر يدفع 80 ألف من جيبه 😅 B منطقي", "صح، يكلم بنكه يسرّعون الإجراء 👌", "الطيبة حلوة بس العقل أحلى 🧠", "احمِ نفسك أول 🔒", "قرار صعب بس واقعي 💯", "فيه جمعيات خيرية تساعد بالعمليات 🤲 B", "تتمسّك بالنظام وتدعي له 🤲", "الحق يرجع بطريقته 🏦", "وش ضمانك إن البنك ما يسحبها منك بعدين؟ 🤔 B", "معك، لا تتسرّع حتى لو صادق 👌", "أحسنت، العاطفة ممكن تكلّفك كثير 💸", "B وأدعي له من قلبي 🤲", "المنطق يقول B بس القلب يوجع 💔", "صح، ولو يبي يسرّعها يروح فرع بنكه 👍", "ما يلومك أحد 💯", "قرار الحريصين 🔒", "تقدر تساعده بمبلغ بسيط بدون ما تحمّل نفسك الكل 🤍", "عشرة أيام مو نهاية العالم ⏳", "B وبكل احترام 👌", "والله فاهمها صح 🧠", "كثير ندموا لأنهم دفعوا من جيبهم 😬", "البنك أكّد بس ما ضمن 🤷 B", "تحترم النظام وتحمي نفسك 🏦", "ذكي 😎", "ما أحد يقدر يقول لك غلط 💯", "صح، العقل أول 🧠", "وش رأيكم بحل وسط؟ تساعده بجزء 🤔", "تلتزم وتتابع مع البنك كل يوم 👍", "B عشان تنام مرتاح 😌", "ما في أحد ملزوم يدفع عن غيره 🤷", "قرار ناضج 👏"]}, {"id": "e", "title": "ردود عامة وعاطفية وتفاعل", "items": ["لا تنسون ترسلونها لأحد يحتاج يعرف هالحيلة 🔁", "وش كنت بتسوي لو كانت أمك؟ 🥺", "الجزء الجاي بيصدمكم 👀 تابعوا", "أكثر تعليق منقسم شفناه 🔥 كملوا النقاش", "كل الاحترام للي اختار A ولي اختار B 🤍", "سؤال صعب صح؟ 😅", "الله يشفي كل مريض 🤲", "الحمدلله إنه طلع صادق 😮‍💨", "مين توقع إنه صادق؟ 👀", "لو أنت مكانه وش تتمنى الناس تسوي؟ 🤔", "C؟ قولوا لنا وش هو 😄", "تحمّس للجزء الجاي 🔥", "نورتونا 🤍", "جوابك يقول كثير عن قلبك 👀", "مين جاي من الجزء الأول؟ 🙋‍♂️", "ريّحت قلبي بتعليقك 🤍", "الجزء الثالث بيكشف كل شي 👀", "حقك تحتار 😅 القرار صعب", "شاركها مع أخوك وشوف وش يختار 👀", "تعليقك فخم 👏"]}];
+let used={};try{used=JSON.parse(localStorage.getItem("used8")||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem("used8",JSON.stringify(used))}catch(e){}};
+const bar=document.getElementById("bar"),list=document.getElementById("list"),prog=document.getElementById("prog"),toast=document.getElementById("toast");
+let n=0;const total=DATA.reduce((a,c)=>a+c.items.length,0);
+DATA.forEach(c=>{const a=document.createElement("a");a.href="#"+c.id;a.textContent=c.title.split(":")[0].split("(")[0].trim();bar.appendChild(a);
+const s=document.createElement("section");s.id=c.id;s.innerHTML="<h2>"+c.title+" <span>"+c.items.length+" رد</span></h2>";const ol=document.createElement("ol");
+c.items.forEach(t=>{n++;const key=c.id+":"+t;const li=document.createElement("li");if(used[key])li.classList.add("done");
+const num=document.createElement("span");num.className="n";num.textContent=n;const p=document.createElement("p");p.textContent=t;
+const b=document.createElement("button");b.type="button";b.textContent=used[key]?"تم ✓":"نسخ";
+b.addEventListener("click",()=>{const ok=()=>{used[key]=1;save();li.classList.add("done");b.textContent="تم ✓";show("تم النسخ ✅");upd()};
+const sel=()=>{const r=document.createRange();r.selectNodeContents(p);const g=getSelection();g.removeAllRanges();g.addRange(r);try{document.execCommand("copy");ok()}catch(e){show("النص محدد، انسخه يدوياً")}};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,sel)}else sel()});
+li.append(num,p,b);ol.appendChild(li)});s.appendChild(ol);list.appendChild(s)});
+function upd(){const u=Object.keys(used).length;prog.innerHTML="استخدمت "+u+" من "+total+' <button type="button" id="reset">ابدأ من جديد</button>';document.getElementById("reset").onclick=()=>{used={};save();document.querySelectorAll("li.done").forEach(l=>{l.classList.remove("done");l.querySelector("button").textContent="نسخ"});upd()}}
+let tt;function show(m){toast.textContent=m;toast.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove("on"),1400)}
+upd();
+</script>
